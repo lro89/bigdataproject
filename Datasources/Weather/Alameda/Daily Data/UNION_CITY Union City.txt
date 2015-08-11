@@ -1,0 +1,96 @@
+"University of California Statewide Integrated Pest Management Program"
+"How to Manage Pests: California Weather Data"
+"Retrieve data in comma delimited data file format"
+" "
+"Weather database request:  "
+" "
+"Time Period: August 10, 2013 to August 10, 2015, retrieved on August 11, 2015"
+" (731 days)"
+" "
+"To save this text, you can:"
+"Select SAVE AS and TEXT from the top menu of your browser, or"
+"copy and paste the data to a new document in a word processor"
+"and save it as text."
+" "
+"Note: Only 98% of requested data were available from station UNION_CITY.A.    See Retrieval Table."
+" "
+"                     Retrieval Table"
+"                     Stations used to fill in missing data"
+" "
+"                     Data Values  Data Values  Data Values  Data Values  Data Values"
+"                        from         from         from         from        Missing"
+"Variable             Station      Backup 1     Backup 2     Averages"
+"Precipitation          719            0            0           12            0        "
+"                     UNION_CITY.A SANJOSE.A    OAKLAND_FOOTûHILLS.A      NEWARK.C     "
+"Air Temps, max/min     713            0            0           18            0        "
+"                     UNION_CITY.A SANJOSE.A    OAKLAND_FOOTûHILLS.A      NEWARK.C     "
+"Soil Temps, max/min    713            0            0            0           18        "
+"                     UNION_CITY.A SANJOSE.A    none         none         "
+"Rel. Humidity          711            0            0            0           20        "
+"                     UNION_CITY.A none         none         none         "
+"ETo                    720            0            0            0           11        "
+"                     UNION_CITY.A none         none         none         "
+"Solar Radiation        704            0            0           27            0        "
+"                     UNION_CITY.A SANJOSE.A    OAKLAND_FOOTûHILLS.A      SANJOSE.A    "
+"Wind Speed & Dir       712            0            0            0           19        "
+"                     UNION_CITY.A none         none         none         "
+" "
+"Variable   Description                   Units"
+"   1       Database name                 "
+"   2       Date: year,month,day          yyyymmdd"
+"   3       Observation time              hhmm"
+"   4       Precipitation, amount         Millimeters"
+"   5       Precipitation, type           (coded)"
+"   6       Air temperature, maximum      Celsius"
+"   7       Air temperature, minimum      Celsius"
+"   8       Air temperature, observed     Celsius"
+"   9       Weather conditions            (coded)"
+"  10       Wind, direction               N,NE,E,SE,S,SW,W,NW, 0=calm"
+"  11       Wind, speed                   Meters per second"
+"  12       Bulb temperature, wet         Celsius"
+"  13       Bulb temperature, dry         Celsius"
+"  14       Soil temperature, maximum     Celsius"
+"  15       Soil temperature, minimum     Celsius"
+"  16       Pan evaporation               Millimeters"
+"  17       Solar radiation               Watts per sq. meters"
+"  18       Reference evapotranspiration  Millimeters"
+"  19       Relative humidity, minimum    Percent"
+"  20       Relative humidity, maximum    Percent"
+" "
+"Station","Date","Time","Precip","type","Air max","min","obs","Wx","Wind dir","speed","Bulb wet","dry","Soil max","min","Evap","Solar","ETo","RH max","min"
+UNION_CITY.A,20130810,2359,0.000,,21.7,14.4,,,0,0,,,22.2,21.7,,231,3.807,90.0,65.0
+UNION_CITY.A,20130811,2359,0.000,,21.1,13.3,,,0,0,,,22.2,21.7,,249,4.061,92.0,65.0
+UNION_CITY.A,20130812,2359,0.000,,25.0,13.3,,,0,0,,,22.8,21.1,,286,5.076,93.0,46.0
+UNION_CITY.A,20130813,2359,0.000,,28.3,11.1,,,0,0,,,22.2,21.1,,289,5.076,97.0,36.0
+UNION_CITY.A,20130814,2359,0.000,,23.3,12.2,,,0,0,,,22.2,21.1,,291,4.822,94.0,58.0
+UNION_CITY.A,20130815,2359,0.000,,24.4,17.8,,,0,0,,,22.8,21.7,,320,4.569,94.0,69.0
+UNION_CITY.A,20130816,2359,0.000,,26.7,15.0,,,0,0,,,23.3,22.2,,284,5.076,97.0,47.0
+UNION_CITY.A,20130817,2359,0.000,,22.8,14.4,,,0,0,,,22.8,22.2,,168,2.538,92.0,69.0
+UNION_CITY.A,20130818,2359,0.000,,31.7,12.8,,,0,0,,,22.8,21.1,,273,5.076,97.0,37.0
+UNION_CITY.A,20130819,2359,0.000,,28.3,16.7,,,0,0,,,22.8,21.7,,253,4.822,92.0,49.0
+UNION_CITY.A,20130820,2359,0.000,,25.6,15.0,,,0,0,,,22.8,21.7,,274,4.822,92.0,54.0
+UNION_CITY.A,20130821,2359,0.000,,23.3,13.9,,,0,0,,,22.8,21.7,,256,4.315,91.0,58.0
+UNION_CITY.A,20130822,2359,0.000,,21.7,12.8,,,0,0,,,22.2,21.7,,225,3.807,92.0,63.0
+UNION_CITY.A,20130823,2359,0.000,,20.0,13.9,,,0,0,,,22.2,21.7,,223,3.553,89.0,71.0
+UNION_CITY.A,20130824,2359,0.000,,22.8,12.8,,,0,0,,,22.2,21.1,,268,4.315,94.0,66.0
+UNION_CITY.A,20130825,2359,0.000,,25.6,17.2,,,0,0,,,22.8,21.7,,253,4.315,92.0,64.0
+UNION_CITY.A,20130826,2359,0.000,,22.8,13.9,,,0,0,,,22.8,21.7,,243,4.061,92.0,63.0
+UNION_CITY.A,20130827,2359,0.000,,23.9,11.1,,,0,0,,,22.2,21.1,,270,4.569,97.0,58.0
+UNION_CITY.A,20130828,2359,0.000,,24.4,16.1,,,0,0,,,22.2,21.1,,256,4.315,93.0,64.0
+UNION_CITY.A,20130829,2359,0.000,,25.0,16.7,,,0,0,,,22.8,22.2,,226,3.807,93.0,63.0
+UNION_CITY.A,20130830,2359,0.000,,28.9,15.6,,,0,0,,,22.8,22.2,,274,4.822,94.0,47.0
+UNION_CITY.A,20130831,2359,0.000,,23.9,13.9,,,0,0,,,22.8,21.7,,265,4.315,96.0,59.0
+UNION_CITY.A,20130901,2359,0.000,,25.6,15.0,,,0,0,,,22.8,21.7,,238,4.315,90.0,50.0
+UNION_CITY.A,20130902,2359,0.000,,25.0,17.2,,,0,0,,,22.8,22.2,,155,2.538,91.0,64.0
+UNION_CITY.A,20130903,2359,0.000,,26.1,14.4,,,0,0,,,,,,266,4.315,94.0,56.0
+UNION_CITY.A,20130904,2359,0.000,,23.3,17.2,,,0,0,,,22.8,21.7,,244,4.061,86.0,63.0
+UNION_CITY.A,20130905,2359,0.000,,22.8,14.4,,,0,0,,,22.8,22.2,,252,4.061,91.0,65.0
+UNION_CITY.A,20130906,2359,0.000,,29.4,16.1,,,0,0,,,22.2,21.1,,373,4.822,97.0,38.0
+UNION_CITY.A,20130907,2359,0.000,,32.8,13.3,,,0,0,,,22.2,21.1,,251,5.330,86.0,27.0
+UNION_CITY.A,20130908,2359,0.000,,29.4,13.3,,,0,0,,,22.2,21.1,,245,4.569,93.0,41.0
+UNION_CITY.A,20130909,2359,0.000,,30.0,13.3,,,0,0,,,22.2,21.1,,242,4.569,94.0,35.0
+UNION_CITY.A,20130910,2359,0.000,,23.9,15.0,,,0,0,,,22.2,21.1,,228,3.807,94.0,62.0
+UNION_CITY.A,20130911,2359,0.000,,23.9,13.9,,,0,0,,,21.7,21.1,,200,3.300,91.0,61.0
+UNION_CITY.A,20130912,2359,0.000,,23.3,15.6,,,0,0,,,21.7,21.1,,164,2.538,90.0,66.0
+UNION_CITY.A,20130913,2359,0.000,,22.2,15.0,,,W,2,,,21.7,21.1,,212,3.300,90.5,69.0
+UNION_CITY.A,20130914,2359,0.000,,18.9,14.4,,,W,2,,,21.7,21.1,,120,3.807,91.0,77.0
