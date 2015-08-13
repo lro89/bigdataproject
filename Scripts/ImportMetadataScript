@@ -4,12 +4,12 @@
 
 -- Hive Script um die Metadaten in Hive und HBase abzulegen
 -- Tabellen löschen, falls sie existieren und anschliessend neu anlegen und befuellen
-DROP TABLE IF EXISTS hbase_stations;
-DROP TABLE IF EXISTS hbase_counties;
-DROP TABLE IF EXISTS hbase_cities_counties;
-DROP TABLE IF EXISTS stations;
-DROP TABLE IF EXISTS counties;
-DROP TABLE IF EXISTS cities_counties;
+DROP TABLE IF EXISTS `hbase_stations`;
+DROP TABLE IF EXISTS `hbase_counties`;
+DROP TABLE IF EXISTS `hbase_cities_counties`;
+DROP TABLE IF EXISTS `stations`;
+DROP TABLE IF EXISTS `counties`;
+DROP TABLE IF EXISTS `cities_counties`;
 
 -- Extene Tabellen von HDFS in Hive anlegen
 -- Table stations

@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS `daily`;
+CREATE EXTERNAL TABLE daily(
+  Station String, Date String, Time String, Interval String, 
+  Air_max String, Air_max_time String, Air_min String, Air_min_time String, 
+  Air_obs String, Air_avg String, Air2_max String, Air2_max_time String, 
+  Air2_min String, Air2_min_time String, Air2_obs String, Air2_avg String, Air3_max String, 
+  Air3_max_time String, Air3_min String, Air3_min_time String, Air3_obs String, Air3_avg String, 
+  RH_max String, RH_max_time String, RH_min String, RH_min_time String, RH_avg String, RH2_max String, 
+  RH2_max_time String, RH2_min String, RH2_min_time String, RH2_avg String, RH3_max String, RH3_max_time String, RH3_min String, 
+  RH3_min_time String, RH3_avg String, Soil_max String, Soil_max_time String, Soil_min String, Soil_min_time String, 
+  Soil_obs String, Soil_avg String, Precip String, ETo String, Solar String, Leaf String, Leaf2 String, Leaf3 String, 
+  Wind_max_dir String, Wind_max_speed String, Wind_max_time String, Wind_obs_dir String, Wind_obs_speed String, Wind_avg_dir String, 
+  Wind_avg_speed String, Wind_ST String, Wind_run String, Battery String, Dew_pnt String, Chill_hrs String, Hrs_0C String, 
+  Hrs_29C String, Hrs_35C String, DD5C String, DD5C2 String, DD5C3 String, TC_DSV String, TC_DSV2 String, TC_DSV3 String, 
+  HR18TO24CA90RH String, HR18TO24CA90RH2 String, HR18TO24CA90RH3 String, BEEHOURS String, BEESEASON String)
+ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+ STORED AS TEXTFILE
+ LOCATION '/user/cloudera/Staging/Daily';
+ 
+DROP TABLE IF EXISTS `dailydata`;
+CREATE EXTERNAL TABLE dailydata(
+ Station String, Date String, Time String, Precip String, 
+ type String, Air_max String, Air_min String, obs String, Wx String, Wind_dir String, 
+ speed String, Bulb_wet String, dry String, Soil_max String, Soil_min String, Evap String, 
+ Solar String, ETo String, RH_max String, min String)
+ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+ STORED AS TEXTFILE
+ LOCATION '/user/cloudera/Staging/DailyData';
