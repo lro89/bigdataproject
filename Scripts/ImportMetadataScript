@@ -35,28 +35,27 @@ CREATE EXTERNAL TABLE counties(county STRING)
 
 -- Externe HBase Tabellen anlegen
 -- Table stations
-CREATE TABLE hbase_stations(station string, city string) 
+CREATE TABLE hbase_stations(key string, station string, city string) 
 STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
-WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,city:city")
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,st:station,st:city")
 TBLPROPERTIES ("hbase.table.name" = "stations");
 
 -- Table cities_counties
-CREATE TABLE hbase_cities_counties(city string, county string) 
+CREATE TABLE hbase_cities_counties(key string, city string, county string) 
 STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
-WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,county:county")
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,cc:citiy,cc:county")
 TBLPROPERTIES ("hbase.table.name" = "cities_counties");
 
 -- Table counties
-CREATE TABLE hbase_counties(county string, name string) 
+CREATE TABLE hbase_counties(key string, county string, name string) 
 STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
-WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,county:name")
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,ct:county,ct:name")
 TBLPROPERTIES ("hbase.table.name" = "counties");
 
 -- Daten in HBase einfuegen
 -- stations
-INSERT OVERWRITE TABLE hbase_stations SELECT name, city  FROM stations;
+INSERT OVERWRITE TABLE hbase_stations SELECT name as key, name, city  FROM stations;
 -- cities_counties
-INSERT OVERWRITE TABLE hbase_cities_counties SELECT city, county  FROM cities_counties;
+INSERT OVERWRITE TABLE hbase_cities_counties SELECT city as key, city, county  FROM cities_counties;
 -- counties
-INSERT OVERWRITE TABLE hbase_counties SELECT county, county FROM counties;
-
+INSERT OVERWRITE TABLE hbase_counties SELECT county as key, county, county FROM counties;
