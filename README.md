@@ -1,7 +1,12 @@
 # bigdataproject
 ## Prerequisites:
 
-1. Laden der fehlenden HBase-Libs in /user/oozie/sharelib/ mittels <code>hdfs dfs -put  /usr/lib/hive-hcatalog/share/hcatalog/storage-handlers/hbase/lib/* /user/oozie/share/lib/</code>
+1. HBase starten<br>
+  sudo service hbase-master start<br>
+  sudo service hbase-regionserver start<br>
+
+2. Laden der fehlenden HBase-Libs in /user/oozie/sharelib/ mittels <code>hdfs dfs -put  /usr/lib/hive-hcatalog/share/hcatalog/storage-handlers/hbase/lib/* /user/oozie/share/lib/</code>
+
 
 
 ## Datenherkunft
