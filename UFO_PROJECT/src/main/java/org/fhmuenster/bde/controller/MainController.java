@@ -8,8 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
+	// test hbase
+	// @Inject
+	// CitiesCountiesService citiesCountiesService;
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getPrimaryRessources(Model model) {
+		// Test hbase
+		// citiesCountiesService.findAll();
 		return "main";
 	}
 }
