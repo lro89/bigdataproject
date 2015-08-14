@@ -17,12 +17,4 @@ public class HadoopConfig extends SpringHadoopConfigurerAdapter {
 		config.fileSystemUri("hdfs://localhost:8020");
 	}
 
-	// @Bean(name = "hbaseTemplate")
-	// HbaseTemplate hbaseTemplate() {
-	// AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-	// "/META-INF/spring/application-context.xml", HadoopConfig.class);
-	// context.registerShutdownHook();
-	// return context.getBean(HbaseTemplate.class);
-	// }
-
 }
