@@ -23,7 +23,7 @@ public class UfoMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     protected void map(LongWritable offset, Text line, Context context) throws IOException, InterruptedException {
         String tmpString = line.toString();
         String[] fields = tmpString.split("\";\"");
-        String cityFromStream = fields[0];
+        String cityFromStream = fields[1];
         city.set(cityFromStream);
         context.write(city, ONE);
 
