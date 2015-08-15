@@ -9,31 +9,19 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 public class UfoMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
-    public enum Counters {
-        UNCHANGED, MODIFIED
-    }
-
     private final IntWritable ONE = new IntWritable(1);
 
-    // private Text word = new Text();
-
-    private Text city = new Text();
+    private Text cityAndShape = new Text();
 
     @Override
     protected void map(LongWritable offset, Text line, Context context) throws IOException, InterruptedException {
         String tmpString = line.toString();
-        String[] fields = tmpString.split("\";\"");
-        String cityFromStream = fields[1];
-        city.set(cityFromStream);
-        context.write(city, ONE);
+        String[] fields = tmpString.split(";");
 
-        // StringTokenizer parser = new StringTokenizer(line.toString());
-        // while (parser.hasMoreTokens()) {
-        // String oldWord = parser.nextToken();
-        // String newWord = oldWord.replaceAll("[^A-Za-z0-9 ]", "").toLowerCase();
-        // context.getCounter(oldWord.equals(newWord) ? Counters.UNCHANGED : Counters.MODIFIED).increment(1);
-        // word.set(newWord);
-        // context.write(word, ONE);
-        // }
+        String cityFromStream = fields[1].replace("\"", "");
+        String shapeFromStream = fields[3].replace("\"", "");
+
+        cityAndShape.set(cityFromStream + ";" + shapeFromStream);
+        context.write(cityAndShape, ONE);
     }
 }
