@@ -5,7 +5,7 @@
   sudo service hbase-master start<br>
   sudo service hbase-regionserver start<br>
 
-2. Laden der fehlenden HBase-Libs in /user/oozie/sharelib/ mittels <code>hdfs dfs -put  /usr/lib/hive-hcatalog/share/hcatalog/storage-handlers/hbase/lib/* /user/oozie/share/lib/</code>
+2. Laden der Source-Ordner in hdfs:/user/cloudera/Workflows: Enthält die Oozie-Workflows samt benötigter Lib-Dateien
 
 
 
