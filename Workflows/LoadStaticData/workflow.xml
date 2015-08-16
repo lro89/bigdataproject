@@ -1,5 +1,5 @@
 
-<workflow-app name="LoadStaticData-copy" xmlns="uri:oozie:workflow:0.4">
+<workflow-app name="LoadStaticData" xmlns="uri:oozie:workflow:0.4">
   <global>
       <job-xml>hive-site.xml</job-xml>
   </global>
@@ -9,6 +9,8 @@
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
             <script>/user/cloudera/Scripts/ImportMetadataScript</script>
+            <file>/user/cloudera/Workflows/LoadStaticData/lib/hbase-site.xml#hbase-site.xml</file>
+            <file>/user/cloudera/Workflows/LoadStaticData/lib/hive-site.xml#hive-site.xml</file>
         </hive>
         <ok to="end"/>
         <error to="kill"/>

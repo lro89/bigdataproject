@@ -9,8 +9,8 @@
                   <delete path="${nameNode}/user/cloudera/Staging/DailyData"/>
             </prepare>
             <script>/user/cloudera/Scripts/LoadMultipleFilesInFolders.pig</script>
-              <param>pfad=&quot;/user/cloudera/Datasources/Weather/*/Daily Data/*.txt&quot;</param>
-              <param>savefileto=&quot;/user/cloudera/Staging/DailyData&quot;</param>
+              <param>pfad=${pfad1}</param>
+              <param>savefileto=${savefileto1}</param>
         </pig>
         <ok to="Daily"/>
         <error to="kill"/>
@@ -23,8 +23,8 @@
                   <delete path="${nameNode}/user/cloudera/Staging/Daily"/>
             </prepare>
             <script>/user/cloudera/Scripts/LoadMultipleFilesInFolders.pig</script>
-              <param>savefileto=&quot;/user/cloudera/Staging/Daily&quot;</param>
-              <param>pfad=&quot;/user/cloudera/Datasources/Weather/*/Daily/*.txt&quot;</param>
+              <param>pfad=${pfad2}</param>
+              <param>savefileto=${savefileto2}</param>
         </pig>
         <ok to="CreateWeatherTables"/>
         <error to="kill"/>
