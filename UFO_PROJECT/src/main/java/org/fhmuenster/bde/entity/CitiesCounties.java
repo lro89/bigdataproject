@@ -3,6 +3,7 @@ package org.fhmuenster.bde.entity;
 public class CitiesCounties {
 
 	private String city;
+
 	private String county;
 
 	public CitiesCounties(String city, String county) {
