@@ -67,7 +67,6 @@ public class UfoCitiesJoinDriver {
         configureJob(mapJoin, "Map Join", jobOneSortedPath + "," + jobTwoSortedPath, outputPath + "/results",
                 NullWritable.class, JoinValuesMapper.class, Reducer.class);
         mapJoin.setInputFormatClass(CompositeInputFormat.class);
-
         // Jobs starten
         List<Job> jobsToExecute = Lists.newArrayList(sortUfoJob, sortCitiesJob, mapJoin);
         int exitStatus = 0;
@@ -130,6 +129,7 @@ public class UfoCitiesJoinDriver {
         config.set("mapreduce.input.keyvaluelinerecordreader.key.value.separator", separator);
 
         String joinExpression = CompositeInputFormat.compose("inner", KeyValueTextInputFormat.class, paths);
+        System.out.println(joinExpression);
         config.set("mapred.join.expr", joinExpression);
         config.set("separator", separator);
         return config;
