@@ -3,33 +3,101 @@
 <head>
 </head>
 <body>
-
 	<div class="container" th:fragment="content">
+		<script type="text/javascript" src="highchart/highmaps.js"></script>
+		<script type="text/javascript" src="highchart/exporting.js"></script>
+		<script type="text/javascript" src="highchart/us-ca-all.js"></script>
 
-		<h3 class="page-header">UFO pro County</h3>
-		<div>&Uuml;bersicht aller UFO-Sichtungen in Kalifornien</div>
+		<script type="text/javascript">
+			$(function() {
 
-		<div class="col-md-9">
-			<table id="tableufopercounty"
-				class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th class="col-md-2">County</th>
-						<th class="col-md-1">Anzahl</th>
-					</tr>
-				</thead>
-				<tbody>
-					<div th:each="ufoPerCounty : ${ufoPerCountyList}">
-						<tr>
-							<td th:text="${ufoPerCounty.county}">Lake County</td>
-							<td th:text="${ufoPerCounty.numberOfUfos}">10</td>
-						</tr>
-					</div>
-				</tbody>
-			</table>
+				// Prepare demo data
+				var data = [ {
+					"hc-key" : "us-ca-051",
+					"value" : 57
+				} ];
+
+				// Initiate the chart
+				$('#ca_ufo_map').highcharts('Map', {
+					title : {
+						text : ' '
+					},
+
+					chart : {
+						// Edit chart spacing
+						spacingBottom : 15,
+						spacingTop : 10,
+						spacingLeft : 10,
+						spacingRight : 10,
+
+						// Explicitly tell the width and height of a chart
+						width : null,
+						height : null
+					},
+
+					mapNavigation : {
+						enabled : true,
+						buttonOptions : {
+							verticalAlign : 'bottom'
+						}
+					},
+
+					colorAxis : {
+						min : 0
+					},
+
+					series : [ {
+						data : data,
+						mapData : Highcharts.maps['countries/us/us-ca-all'],
+						joinBy : 'hc-key',
+						name : 'Anzahl UFO-Sichtungen',
+						states : {
+							hover : {
+								color : '#FE9A2E'
+							}
+						},
+						dataLabels : {
+							enabled : true,
+							format : '{point.name}'
+						}
+					} ]
+				});
+			});
+		</script>
+
+
+		<div class="row">
+			<div class="col-md-8">
+				<h3 class="page-header">&Uuml;bersicht aller UFO-Sichtungen in
+					Kalifornien</h3>
+			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<h4>Interaktive Karte</h4>
+				<div id="ca_ufo_map"></div>
 
+				<div>&nbsp;</div>
+				<h4>Tabelle</h4>
+				<table id="tableufopercounty"
+					class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th class="col-md-2">County</th>
+							<th class="col-md-1">Anzahl UFO-Sichtungen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<div th:each="ufoPerCounty : ${ufoPerCountyList}">
+							<tr>
+								<td th:text="${ufoPerCounty.county}">Lake County</td>
+								<td th:text="${ufoPerCounty.numberOfUfos}">10</td>
+							</tr>
+						</div>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
-
 </body>
 </html>
