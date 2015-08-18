@@ -1,0 +1,486 @@
+City;County;Code
+Adelanto;San Bernardino County;us-ca-071
+Agoura Hills;Los Angeles County;us-ca-037
+Alameda;Alameda County;us-ca-001
+Albany;Alameda County;us-ca-001
+Alhambra;Los Angeles County;us-ca-037
+Aliso Viejo;Orange County;us-ca-059
+Alpine;Alpine County;us-ca-003
+Alturas;Modoc County;us-ca-049
+Amador;Amador County ;us-ca-005
+American Canyon;Napa County;us-ca-055
+Anaheim;Orange County;us-ca-059
+Anderson;Shasta County;us-ca-089
+Angels Camp;Calaveras County;us-ca-009
+Antioch;Contra Costa County;us-ca-013
+Apple Valley;San Bernardino County;us-ca-071
+Arcadia;Los Angeles County;us-ca-037
+Arcata;;#NV
+Arroyo Grande;San Luis Obispo County;us-ca-079
+Artesia;Los Angeles County;us-ca-037
+Arvin;Kern County;us-ca-029
+Atascadero;San Luis Obispo County;us-ca-079
+Atherton;San Mateo County;us-ca-081
+Atwater;Merced County;us-ca-047
+Auburn;Placer County;us-ca-061
+Avalon;Los Angeles County;us-ca-037
+Avenal;Kings County;us-ca-031
+Azusa;Los Angeles County;us-ca-037
+Bakersfield;Kern County;us-ca-029
+Baldwin Park;Los Angeles County;us-ca-037
+Banning;Riverside County;us-ca-065
+Barstow;San Bernardino County;us-ca-071
+Beaumont;Riverside County;us-ca-065
+Bell;Los Angeles County;us-ca-037
+Bell Gardens;Los Angeles County;us-ca-037
+Bellflower;Los Angeles County;us-ca-037
+Belmont;San Mateo County;us-ca-081
+Belvedere;Marin County;us-ca-041
+Benicia;Solano County;us-ca-095
+Berkeley;Alameda County;us-ca-001
+Beverly Hills;Los Angeles County;us-ca-037
+Big Bear Lake;San Bernardino County;us-ca-071
+Biggs;Butte County;us-ca-006
+Bishop;Inyo County;us-ca-027
+Blue Lake;Humboldt County;us-ca-023
+Blythe;Riverside County;us-ca-065
+Bradbury;Los Angeles County;us-ca-037
+Brawley;Imperial County;us-ca-025
+Brea;Orange County;us-ca-059
+Brentwood;Contra Costa County;us-ca-013
+Brisbane;San Mateo County;us-ca-081
+Buellton;Santa Barbara County;us-ca-083
+Buena Park;Orange County;us-ca-059
+Burbank;Los Angeles County;us-ca-037
+Burlingame;San Mateo County;us-ca-081
+Calabasas;Los Angeles County;us-ca-037
+Calexico;Imperial County;us-ca-025
+California City;Kern County;us-ca-029
+Calimesa;Riverside County;us-ca-065
+Calipatria;Imperial County;us-ca-025
+Calistoga;Napa County;us-ca-055
+Camarillo;Ventura County;us-ca-111
+Campbell;Santa Clara County;us-ca-085
+Canyon Lake;Riverside County;us-ca-065
+Capitola;Santa Cruz County;us-ca-087
+Carlsbad;San Diego County;us-ca-073
+Carmel-By-The-Sea;Monterey County;us-ca-053
+Carpinteria;Santa Barbara County;us-ca-083
+Carson;Los Angeles County;us-ca-037
+Cathedral City;Riverside County;us-ca-065
+Ceres;Stanislaus County;us-ca-099
+Cerritos;Los Angeles County;us-ca-037
+Chico;Butte County;us-ca-006
+Chino;San Bernardino County;us-ca-071
+Chino Hills;San Bernardino County;us-ca-071
+Chowchilla;Madera County;us-ca-039
+Chula Vista;San Diego County;us-ca-073
+Citrus Heights;Sacramento County;us-ca-067
+Claremont;Los Angeles County;us-ca-037
+Clayton;Contra Costa County;us-ca-013
+Clearlake;Lake County;us-ca-033
+Cloverdale;Sonoma County;us-ca-097
+Clovis;Fresno County;us-ca-019
+Coachella;Riverside County;us-ca-065
+Coalinga;Fresno County;us-ca-019
+Colfax;Placer County;us-ca-061
+Colma;San Mateo County;us-ca-081
+Colton;San Bernardino County;us-ca-071
+Colusa;Colusa County;us-ca-011
+Commerce;Los Angeles County;us-ca-037
+Compton;Los Angeles County;us-ca-037
+Concord;Contra Costa County;us-ca-013
+Corcoran;Kings County;us-ca-031
+Corning;Tehama County;us-ca-103
+Corona;Riverside County;us-ca-065
+Coronado;San Diego County;us-ca-073
+Corte Madera;Marin County;us-ca-041
+Costa Mesa;Orange County;us-ca-059
+Cotati;Sonoma County;us-ca-097
+Covina;Los Angeles County;us-ca-037
+Crescent City;Del Norte County;us-ca-015
+Cudahy;Los Angeles County;us-ca-037
+Culver City;Los Angeles County;us-ca-037
+Cupertino;Santa Clara County;us-ca-085
+Cypress;Orange County;us-ca-059
+Daly City;San Mateo County;us-ca-081
+Dana Point;Orange County;us-ca-059
+Danville;Contra Costa County;us-ca-013
+Davis;Yolo County;us-ca-113
+Del Mar;San Diego County;us-ca-073
+Del Rey Oaks;Monterey County;us-ca-053
+Delano;Kern County;us-ca-029
+Desert Hot Springs;Riverside County;us-ca-065
+Diamond Bar;Los Angeles County;us-ca-037
+Dinuba;Tulare County;us-ca-107
+Dixon;Solano County;us-ca-095
+Dorris;Siskiyou County;us-ca-093
+Dos Palos;Merced County;us-ca-047
+Downey;Los Angeles County;us-ca-037
+Duarte;Los Angeles County;us-ca-037
+Dublin;Alameda County;us-ca-001
+Dunsmuir;Siskiyou County;us-ca-093
+East Palo Alto;San Mateo County;us-ca-081
+Eastvale;Riverside County;us-ca-065
+El Cajon;San Diego County;us-ca-073
+El Centro;Imperial County;us-ca-025
+El Cerrito;Contra Costa County;us-ca-013
+El Monte;Los Angeles County;us-ca-037
+El Paso De Robles;San Luis Obispo County;us-ca-079
+El Segundo;Los Angeles County;us-ca-037
+Elk Grove;Sacramento County;us-ca-067
+Emeryville;Alameda County;us-ca-001
+Encinitas;San Diego County;us-ca-073
+Escalon;San Joaquin County;us-ca-077
+Escondido;San Diego County;us-ca-073
+Etna;Siskiyou County;us-ca-093
+Eureka;Humboldt County;us-ca-023
+Exeter;Tulare County;us-ca-107
+Fairfax;Marin County;us-ca-041
+Fairfield;Solano County;us-ca-095
+Farmersville;Tulare County;us-ca-107
+Ferndale;Humboldt County;us-ca-023
+Fillmore;Ventura County;us-ca-111
+Firebaugh;Fresno County;us-ca-019
+Folsom;Sacramento County;us-ca-067
+Fontana;San Bernardino County;us-ca-071
+Fort Bragg;Mendocino County;us-ca-045
+Fort Jones;Siskiyou County;us-ca-093
+Fortuna;Humboldt County;us-ca-023
+Foster City;San Mateo County;us-ca-081
+Fountain Valley;Orange County;us-ca-059
+Fowler;Fresno County;us-ca-019
+Fremont;Alameda County;us-ca-001
+Fresno;Fresno County;us-ca-019
+Fullerton;Orange County;us-ca-059
+Galt;Sacramento County;us-ca-067
+Garden Grove;Orange County;us-ca-059
+Gardena;Los Angeles County;us-ca-037
+Gilroy;Santa Clara County;us-ca-085
+Glendale;Los Angeles County;us-ca-037
+Glendora;Los Angeles County;us-ca-037
+Goleta;Santa Barbara County;us-ca-083
+Gonzales;Monterey County;us-ca-053
+Grand Terrace;San Bernardino County;us-ca-071
+Grass Valley;Nevada County;us-ca-057
+Greenfield;Monterey County;us-ca-053
+Gridley;Butte County;us-ca-006
+Grover Beach;San Luis Obispo County;us-ca-079
+Guadalupe;Santa Barbara County;us-ca-083
+Gustine;Merced County;us-ca-047
+Half Moon Bay;San Mateo County;us-ca-081
+Hanford;Kings County;us-ca-031
+Hawaiian Gardens;Los Angeles County;us-ca-037
+Hawthorne;Los Angeles County;us-ca-037
+Hayward;Alameda County;us-ca-001
+Healdsburg;Sonoma County;us-ca-097
+Hemet;Riverside County;us-ca-065
+Hercules;Contra Costa County;us-ca-013
+Hermosa Beach;Los Angeles County;us-ca-037
+Hesperia;San Bernardino County;us-ca-071
+Hidden Hills;Los Angeles County;us-ca-037
+Highland;San Bernardino County;us-ca-071
+Hillsborough;San Mateo County;us-ca-081
+Hollister;San Benito County;us-ca-069
+Holtville;Imperial County;us-ca-025
+Hughson;Stanislaus County;us-ca-099
+Huntington Beach;Orange County;us-ca-059
+Huntington Park;Los Angeles County;us-ca-037
+Huron;Fresno County;us-ca-019
+Imperial;Imperial County;us-ca-025
+Imperial Beach;San Diego County;us-ca-073
+Indian Wells;Riverside County;us-ca-065
+Indio;Riverside County;us-ca-065
+Industry;Los Angeles County;us-ca-037
+Inglewood;Los Angeles County;us-ca-037
+Ione;Amador County ;us-ca-005
+Irvine;Orange County;us-ca-059
+Irwindale;Los Angeles County;us-ca-037
+Isleton;Sacramento County;us-ca-067
+Jackson;Amador County ;us-ca-005
+Jurupa Valley;Riverside County;us-ca-065
+Kerman;Fresno County;us-ca-019
+King City;Monterey County;us-ca-053
+Kingsburg;Fresno County;us-ca-019
+La Canada Flintridge;Los Angeles County;us-ca-037
+La Habra;Orange County;us-ca-059
+La Habra Heights;Los Angeles County;us-ca-037
+La Mesa;San Diego County;us-ca-073
+La Mirada;Los Angeles County;us-ca-037
+La Palma;Orange County;us-ca-059
+La Puente;Los Angeles County;us-ca-037
+La Quinta;Riverside County;us-ca-065
+La Verne;Los Angeles County;us-ca-037
+Lafayette;Contra Costa County;us-ca-013
+Laguna Beach;Orange County;us-ca-059
+Laguna Hills;Orange County;us-ca-059
+Laguna Niguel;Orange County;us-ca-059
+Laguna Woods;Orange County;us-ca-059
+Lake Elsinore;Riverside County;us-ca-065
+Lake Forest;Orange County;us-ca-059
+Lakeport;Lake County;us-ca-033
+Lakewood;Los Angeles County;us-ca-037
+Lancaster;Los Angeles County;us-ca-037
+Larkspur;Marin County;us-ca-041
+Lathrop;San Joaquin County;us-ca-077
+Lawndale;Los Angeles County;us-ca-037
+Lemon Grove;San Diego County;us-ca-073
+Lemoore;Kings County;us-ca-031
+Lincoln;Placer County;us-ca-061
+Lindsay;Tulare County;us-ca-107
+Live Oak;Sutter County;us-ca-101
+Livermore;Alameda County;us-ca-001
+Livingston;Merced County;us-ca-047
+Lodi;San Joaquin County;us-ca-077
+Loma Linda;San Bernardino County;us-ca-071
+Lomita;Los Angeles County;us-ca-037
+Lompoc;Santa Barbara County;us-ca-083
+Long Beach;Los Angeles County;us-ca-037
+Loomis;Placer County;us-ca-061
+Los Alamitos;Orange County;us-ca-059
+Los Altos;Santa Clara County;us-ca-085
+Los Altos Hills;Santa Clara County;us-ca-085
+Los Angeles;Los Angeles County;us-ca-037
+Los Banos;Merced County;us-ca-047
+Los Gatos;Santa Clara County;us-ca-085
+Loyalton;Sierra County;us-ca-091
+Lynwood;Los Angeles County;us-ca-037
+Madera;Madera County;us-ca-039
+Malibu;Los Angeles County;us-ca-037
+Mammoth Lakes;Mono;us-ca-049
+Manhattan Beach;Los Angeles County;us-ca-037
+Manteca;San Joaquin County;us-ca-077
+Maricopa;Kern County;us-ca-029
+Marina;Monterey County;us-ca-053
+Mariposa;Mariposa County;us-ca-043
+Martinez;Contra Costa County;us-ca-013
+Marysville;Yuba County;us-ca-115
+Maywood;Los Angeles County;us-ca-037
+Mcfarland;Kern County;us-ca-029
+Mendota;Fresno County;us-ca-019
+Menifee;Riverside County;us-ca-065
+Menlo Park;San Mateo County;us-ca-081
+Merced;Merced County;us-ca-047
+Mill Valley;Marin County;us-ca-041
+Millbrae;San Mateo County;us-ca-081
+Milpitas;Santa Clara County;us-ca-085
+Mission Viejo;Orange County;us-ca-059
+Modesto;Stanislaus County;us-ca-099
+Monrovia;Los Angeles County;us-ca-037
+Montague;Siskiyou County;us-ca-093
+Montclair;San Bernardino County;us-ca-071
+Monte Sereno;Santa Clara County;us-ca-085
+Montebello;Los Angeles County;us-ca-037
+Monterey;Monterey County;us-ca-053
+Monterey Park;Los Angeles County;us-ca-037
+Moorpark;Ventura County;us-ca-111
+Moraga;Contra Costa County;us-ca-013
+Moreno Valley;Riverside County;us-ca-065
+Morgan Hill;Santa Clara County;us-ca-085
+Morro Bay;San Luis Obispo County;us-ca-079
+Mount Shasta;Siskiyou County;us-ca-093
+Mountain View;Santa Clara County;us-ca-085
+Murrieta;Riverside County;us-ca-065
+Napa;Napa County;us-ca-055
+National City;San Diego County;us-ca-073
+Needles;San Bernardino County;us-ca-071
+Nevada City;Nevada County;us-ca-057
+Newark;Alameda County;us-ca-001
+Newman;Stanislaus County;us-ca-099
+Newport Beach;Orange County;us-ca-059
+Norco;Riverside County;us-ca-065
+Norwalk;Los Angeles County;us-ca-037
+Novato;Marin County;us-ca-041
+Oakdale;Stanislaus County;us-ca-099
+Oakland;Alameda County;us-ca-001
+Oakley;Contra Costa County;us-ca-013
+Oceanside;San Diego County;us-ca-073
+Ojai;Ventura County;us-ca-111
+Ontario;San Bernardino County;us-ca-071
+Orange;Orange County;us-ca-059
+Orange Cove;Fresno County;us-ca-019
+Orinda;Contra Costa County;us-ca-013
+Orland;Glenn County;us-ca-021
+Oroville;Butte County;us-ca-006
+Oxnard;Ventura County;us-ca-111
+Pacific Grove;Monterey County;us-ca-053
+Pacifica;San Mateo County;us-ca-081
+Palm Desert;Riverside County;us-ca-065
+Palm Springs;Riverside County;us-ca-065
+Palmdale;Los Angeles County;us-ca-037
+Palo Alto;Santa Clara County;us-ca-085
+Palos Verdes Estates;Los Angeles County;us-ca-037
+Paradise;Butte County;us-ca-006
+Paramount;Los Angeles County;us-ca-037
+Parlier;Fresno County;us-ca-019
+Pasadena;Los Angeles County;us-ca-037
+Patterson;Stanislaus County;us-ca-099
+Perris;Riverside County;us-ca-065
+Petaluma;Sonoma County;us-ca-097
+Pico Rivera;Los Angeles County;us-ca-037
+Piedmont;Alameda County;us-ca-001
+Pinole;Contra Costa County;us-ca-013
+Pismo Beach;San Luis Obispo County;us-ca-079
+Pittsburg;Contra Costa County;us-ca-013
+Placentia;Orange County;us-ca-059
+Placerville;El Dorado County;us-ca-017
+Pleasant Hill;Contra Costa County;us-ca-013
+Pleasanton;Alameda County;us-ca-001
+Plymouth;Amador County ;us-ca-005
+Point Arena;Mendocino County;us-ca-045
+Pomona;Los Angeles County;us-ca-037
+Port Hueneme;Ventura County;us-ca-111
+Porterville;Tulare County;us-ca-107
+Portola;Plumas County;us-ca-063
+Portola Valley;San Mateo County;us-ca-081
+Poway;San Diego County;us-ca-073
+Rancho Cordova;Sacramento County;us-ca-067
+Rancho Cucamonga;San Bernardino County;us-ca-071
+Rancho Mirage;Riverside County;us-ca-065
+Rancho Palos Verdes;Los Angeles County;us-ca-037
+Rancho Santa Margarita;Orange County;us-ca-059
+Red Bluff;Tehama County;us-ca-103
+Redding;Shasta County;us-ca-089
+Redlands;San Bernardino County;us-ca-071
+Redondo Beach;Los Angeles County;us-ca-037
+Redwood City;San Mateo County;us-ca-081
+Reedley;Fresno County;us-ca-019
+Rialto;San Bernardino County;us-ca-071
+Richmond;Contra Costa County;us-ca-013
+Ridgecrest;Kern County;us-ca-029
+Rio Dell;Humboldt County;us-ca-023
+Rio Vista;Solano County;us-ca-095
+Ripon;San Joaquin County;us-ca-077
+Riverbank;Stanislaus County;us-ca-099
+Riverside;Riverside County;us-ca-065
+Rocklin;Placer County;us-ca-061
+Rohnert Park;Sonoma County;us-ca-097
+Rolling Hills;Los Angeles County;us-ca-037
+Rolling Hills Estates;Los Angeles County;us-ca-037
+Rosemead;Los Angeles County;us-ca-037
+Roseville;Placer County;us-ca-061
+Ross;Marin County;us-ca-041
+Sacramento;Sacramento County;us-ca-067
+Salinas;Monterey County;us-ca-053
+San Anselmo;Marin County;us-ca-041
+San Bernardino;San Bernardino County;us-ca-071
+San Bruno;San Mateo County;us-ca-081
+San Buenaventura;Ventura County;us-ca-111
+San Carlos;San Mateo County;us-ca-081
+San Clemente;Orange County;us-ca-059
+San Diego;San Diego County;us-ca-073
+San Dimas;Los Angeles County;us-ca-037
+San Fernando;Los Angeles County;us-ca-037
+San Francisco;San Francisco City & County;us-ca-073
+San Gabriel;Los Angeles County;us-ca-037
+San Jacinto;Riverside County;us-ca-065
+San Jose;Santa Clara County;us-ca-085
+San Juan Bautista;San Benito County;us-ca-069
+San Juan Capistrano;Orange County;us-ca-059
+San Leandro;Alameda County;us-ca-001
+San Luis Obispo;San Luis Obispo County;us-ca-079
+San Marcos;San Diego County;us-ca-073
+San Marino;Los Angeles County;us-ca-037
+San Mateo;San Mateo County;us-ca-081
+San Pablo;Contra Costa County;us-ca-013
+San Rafael;Marin County;us-ca-041
+San Ramon;Contra Costa County;us-ca-013
+Sand City;Monterey County;us-ca-053
+Sanger;Fresno County;us-ca-019
+Santa Ana;Orange County;us-ca-059
+Santa Barbara;Santa Barbara County;us-ca-083
+Santa Clara;Santa Clara County;us-ca-085
+Santa Clarita;Los Angeles County;us-ca-037
+Santa Cruz;Santa Cruz County;us-ca-087
+Santa Fe Springs;Los Angeles County;us-ca-037
+Santa Maria;Santa Barbara County;us-ca-083
+Santa Monica;Los Angeles County;us-ca-037
+Santa Paula;Ventura County;us-ca-111
+Santa Rosa;Sonoma County;us-ca-097
+Santee;San Diego County;us-ca-073
+Saratoga;Santa Clara County;us-ca-085
+Sausalito;Marin County;us-ca-041
+Scotts Valley;Santa Cruz County;us-ca-087
+Seal Beach;Orange County;us-ca-059
+Seaside;Monterey County;us-ca-053
+Sebastopol;Sonoma County;us-ca-097
+Selma;Fresno County;us-ca-019
+Shafter;Kern County;us-ca-029
+Shasta Lake;Shasta County;us-ca-089
+Sierra Madre;Los Angeles County;us-ca-037
+Signal Hill;Los Angeles County;us-ca-037
+Simi Valley;Ventura County;us-ca-111
+Solana Beach;San Diego County;us-ca-073
+Soledad;Monterey County;us-ca-053
+Solvang;Santa Barbara County;us-ca-083
+Sonoma ;Sonoma County;us-ca-097
+Sonora;Tuolumne County;us-ca-109
+South El Monte;Los Angeles County;us-ca-037
+South Gate;Los Angeles County;us-ca-037
+South Lake Tahoe;El Dorado County;us-ca-017
+South Pasadena;Los Angeles County;us-ca-037
+South San Francisco;San Mateo County;us-ca-081
+St Helena;Napa County;us-ca-055
+Stanton;Orange County;us-ca-059
+Stockton;San Joaquin County;us-ca-077
+Suisun City;Solano County;us-ca-095
+Sunnyvale;Santa Clara County;us-ca-085
+Susanville;Lassen County;us-ca-035
+Sutter Creek;Amador County ;us-ca-005
+Taft;Kern County;us-ca-029
+Tehachapi;Kern County;us-ca-029
+Tehama;Tehama County;us-ca-103
+Temecula;Riverside County;us-ca-065
+Temple City;Los Angeles County;us-ca-037
+Thousand Oaks;Ventura County;us-ca-111
+Tiburon;Marin County;us-ca-041
+Torrance;Los Angeles County;us-ca-037
+Tracy;San Joaquin County;us-ca-077
+Trinidad;Humboldt County;us-ca-023
+Trinity;Trinity County;us-ca-105
+Truckee;Nevada County;us-ca-057
+Tulare ;Tulare County;us-ca-107
+Tulelake;Siskiyou County;us-ca-093
+Turlock;Stanislaus County;us-ca-099
+Tustin;Orange County;us-ca-059
+Twentynine Palms;San Bernardino County;us-ca-071
+Ukiah;Mendocino County;us-ca-045
+Union City;Alameda County;us-ca-001
+Upland;San Bernardino County;us-ca-071
+Vacaville;Solano County;us-ca-095
+Vallejo;Solano County;us-ca-095
+Ventura;Ventura County;us-ca-111
+Vernon;Los Angeles County;us-ca-037
+Victorville;San Bernardino County;us-ca-071
+Villa Park;Orange County;us-ca-059
+Visalia;Tulare County;us-ca-107
+Vista;San Diego County;us-ca-073
+Walnut;Los Angeles County;us-ca-037
+Walnut Creek;Contra Costa County;us-ca-013
+Wasco;Kern County;us-ca-029
+Waterford;Stanislaus County;us-ca-099
+Watsonville;Santa Cruz County;us-ca-087
+Weed;Siskiyou County;us-ca-093
+West Covina;Los Angeles County;us-ca-037
+West Hollywood;Los Angeles County;us-ca-037
+West Sacramento;Yolo County;us-ca-113
+Westlake Village;Los Angeles County;us-ca-037
+Westminster;Orange County;us-ca-059
+Westmorland;Imperial County;us-ca-025
+Wheatland;Yuba County;us-ca-115
+Whittier;Los Angeles County;us-ca-037
+Wildomar;Riverside County;us-ca-065
+Williams;Colusa County;us-ca-011
+Willits;Mendocino County;us-ca-045
+Willows;Glenn County;us-ca-021
+Windsor;Sonoma County;us-ca-097
+Winters;Yolo County;us-ca-113
+Woodlake;Tulare County;us-ca-107
+Woodland;Yolo County;us-ca-113
+Woodside;San Mateo County;us-ca-081
+Yorba Linda;Orange County;us-ca-059
+Yountville;Napa County;us-ca-055
+Yreka;Siskiyou County;us-ca-093
+Yuba City;Sutter County;us-ca-101
+Yucaipa;San Bernardino County;us-ca-071
+Yucca Valley;San Bernardino County;us-ca-071

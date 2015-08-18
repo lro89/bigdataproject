@@ -21,7 +21,7 @@ public class UfoMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         String cityFromStream = fields[1].replace("\"", "");
         String shapeFromStream = fields[3].replace("\"", "");
 
-        cityAndShape.set(cityFromStream + ";" + shapeFromStream);
+        cityAndShape.set(cityFromStream + ";" + shapeFromStream + ";");
         context.write(cityAndShape, ONE);
     }
 }
