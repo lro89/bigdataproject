@@ -17,6 +17,7 @@
 1. [UFO-Daten](http://www.nuforc.org/webreports.html) 
 2. [Wetter-Daten](http://www.ipm.ucdavis.edu/WEATHER/index.html)
 3. [Counties California](http://www.counties.org/cities-within-each-county)
+4. [Google County Codes](https://www.google.com/fusiontables/DataSource?docid=196LqydLhOq1Wl9612hNhcGoh4vUmRjTaiFvDhA#rows:id=1) => Vorhanden in counties_cities_code, nur für MapRed-Input
 
 
 ## Oozie-Workflows
