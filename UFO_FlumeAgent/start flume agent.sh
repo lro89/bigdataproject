@@ -1,0 +1,1 @@
+flume-ng agent -n agent --conf /usr/lib/flume-ng/conf/ --conf-file /home/cloudera/labs/UFO-flume_WEBAGENT.properties --plugins-path /home/cloudera/labs/Flume_Plugin/plugins.d -Dflume.root.logger=INFO,console
