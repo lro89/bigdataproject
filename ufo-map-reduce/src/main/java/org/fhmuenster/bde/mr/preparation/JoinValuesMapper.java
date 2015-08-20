@@ -37,7 +37,7 @@ public class JoinValuesMapper extends Mapper<Text, TupleWritable, NullWritable, 
     protected void map(Text key, TupleWritable value, Context context) throws IOException, InterruptedException {
         stringBuilder.append(key).append(separator);
         for (Writable writable : value) {
-            stringBuilder.append(writable.toString()).append(separator);
+            stringBuilder.append(writable.toString().replace(";", "")).append(separator);
         }
         stringBuilder.setLength(stringBuilder.length() - 1);
         output.set(stringBuilder.toString());
