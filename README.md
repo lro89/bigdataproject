@@ -19,6 +19,11 @@
 3. [Counties California](http://www.counties.org/cities-within-each-county)
 4. [Google County Codes](https://www.google.com/fusiontables/DataSource?docid=196LqydLhOq1Wl9612hNhcGoh4vUmRjTaiFvDhA#rows:id=1) => Vorhanden in counties_cities_code, nur für MapRed-Input
 
+## Flume
+1. Als su in /usr/lib/flume-ng/conf/flume-env.sh.template <code>export JAVA_OPTS="-Xms100m -Xmx2000m -Dcom.sun.management.jmxremote"
+</code> einkommentieren. Template aus dem Namen entfernen
+2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP entpacken
+3. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
 
 ## Oozie-Workflows
 ### Allgemeines
