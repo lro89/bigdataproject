@@ -20,8 +20,8 @@ import com.google.common.collect.Lists;
 /**
  * Implementiert einen MapSide-Join <br>
  * <br>
- * Angelehnt an das Beispiel von @bbejeck {@link https
- * ://github.com/bbejeck/hadoop-algorithms/tree/master/src/bbejeck/mapred/joins/map}
+ * Angelehnt an das Beispiel von @bbejeck <br>
+ * {@link https://github.com/bbejeck/hadoop-algorithms/tree/master/src/bbejeck/mapred/joins/map}
  * 
  * @author Lena
  *
@@ -67,8 +67,11 @@ public class UfoCitiesJoinDriver {
         configureJob(mapJoin, "Map Join", jobOneSortedPath + "," + jobTwoSortedPath, outputPath + "/results",
                 NullWritable.class, JoinValuesMapper.class, Reducer.class);
         mapJoin.setInputFormatClass(CompositeInputFormat.class);
+
         // Jobs starten
-        List<Job> jobsToExecute = Lists.newArrayList(sortUfoJob, sortCitiesJob, mapJoin);
+        List<Job> jobsToExecute = Lists.newArrayList(mapJoin);
+        // List<Job> jobsToExecute = Lists.newArrayList(sortUfoJob, sortCitiesJob, mapJoin);
+
         int exitStatus = 0;
         for (Job job : jobsToExecute) {
             boolean jobSuccessful = job.waitForCompletion(true);
@@ -109,7 +112,7 @@ public class UfoCitiesJoinDriver {
     /**
      * Auslagerung für die Erzeugung der Join-{@link Configuration} <br>
      * <br>
-     * Nimmt zwei und mehr Pfade entgegen, um mehrere Input-Dateien anzusprechen. Diese werden mit dem
+     * Nimmt zwei Pfade entgegen, um mehrere Input-Dateien anzusprechen. Diese werden mit dem
      * {@link CompositeInputFormat} verbunden <br>
      * <br>
      * 
@@ -123,14 +126,16 @@ public class UfoCitiesJoinDriver {
      * @param paths
      * @return
      */
-    private static Configuration getMapJoinConfiguration(String separator, String... paths) {
+    private static Configuration getMapJoinConfiguration(String separator, String jobOneSortedPath,
+            String jobTwoSortedPath) {
         Configuration config = new Configuration();
         // Bestimmung des Separators (";")
         config.set("mapreduce.input.keyvaluelinerecordreader.key.value.separator", separator);
 
-        String joinExpression = CompositeInputFormat.compose("inner", KeyValueTextInputFormat.class, paths);
+        String joinExpression = CompositeInputFormat.compose("inner", KeyValueTextInputFormat.class, new Path(
+                jobOneSortedPath), new Path(jobTwoSortedPath));
         System.out.println(joinExpression);
-        config.set("mapred.join.expr", joinExpression);
+        config.set("mapreduce.join.expr", joinExpression);
         config.set("separator", separator);
         return config;
     }

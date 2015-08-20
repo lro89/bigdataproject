@@ -17,10 +17,10 @@ import org.apache.hadoop.mapreduce.lib.join.TupleWritable;
  * Im ersten Schritt wird der Key zu einer Zeile hinzugefügt, im zweiten Schritt folgen die Werte.
  * 
  * @author Lena
- *
  */
 public class JoinValuesMapper extends Mapper<Text, TupleWritable, NullWritable, Text> {
 
+    // KeyIn, ValueIn, KeyOut, Valueout
     private static final NullWritable nullKey = NullWritable.get();
 
     private Text output = new Text();
@@ -34,7 +34,6 @@ public class JoinValuesMapper extends Mapper<Text, TupleWritable, NullWritable, 
         separator = context.getConfiguration().get("separator");
     }
 
-    @Override
     protected void map(Text key, TupleWritable value, Context context) throws IOException, InterruptedException {
         stringBuilder.append(key).append(separator);
         for (Writable writable : value) {

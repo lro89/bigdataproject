@@ -110,47 +110,11 @@
             <name-node>${nameNode}</name-node>
             <configuration>
                 <property>
-                    <name>mapreduce.job.map.class</name>
-                    <value>org.apache.hadoop.mapreduce.Reducer</value>
-                </property>
-                <property>
-                    <name>mapred.mapper.new-api</name>
-                    <value>true</value>
-                </property>
-                <property>
-                    <name>mapred.reducer.new-api</name>
-                    <value>false</value>
-                </property>
-                <property>
-                    <name>mapreduce.job.output.key.class</name>
-                    <value>org.apache.hadoop.io.NullWritable</value>
-                </property>
-                <property>
-                    <name>mapreduce.output.fileoutputformat.outputdir</name>
-                    <value>/user/cloudera/ufooutput/results</value>
-                </property>
-                <property>
-                    <name>mapreduce.input.fileinputformat.inputdir</name>
-                    <value>/user/cloudera/ufooutput/CITIES_sorted,/user/cloudera/ufooutput/UFO_sorted</value>
-                </property>
-                <property>
-                    <name>mapreduce.job.reduce.class</name>
-                    <value>org.apache.hadoop.mapreduce.Reducer</value>
-                </property>
-                <property>
-                    <name>mapreduce.job.name</name>
-                    <value>Join</value>
-                </property>
-                <property>
-                    <name>keyIndex</name>
-                    <value>0</value>
-                </property>
-                <property>
                     <name>mapreduce.input.keyvaluelinerecordreader.key.value.separator</name>
                     <value>;</value>
                 </property>
                 <property>
-                    <name>mapred.join.expr</name>
+                    <name>mapreduce.join.expr</name>
                     <value>inner(tbl(org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat,&quot;ufooutput/UFO_sorted&quot;),tbl(org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat,&quot;ufooutput/CITIES_sorted&quot;))</value>
                 </property>
                 <property>
@@ -158,8 +122,44 @@
                     <value>;</value>
                 </property>
                 <property>
-                    <name>mapred.input.format.class</name>
+                    <name>mapreduce.job.name</name>
+                    <value>Join</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.map.class</name>
+                    <value>org.fhmuenster.bde.mr.preparation.JoinValuesMapper</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.reduce.class</name>
+                    <value>org.apache.hadoop.mapreduce.Reducer</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.output.key.class</name>
+                    <value>org.apache.hadoop.io.NullWritable</value>
+                </property>
+                <property>
+                    <name>mapreduce.input.fileinputformat.inputdir</name>
+                    <value>/user/cloudera/ufooutput/CITIES_sorted,/user/cloudera/ufooutput/UFO_sorted</value>
+                </property>
+                <property>
+                    <name>mapreduce.output.fileoutputformat.outputdir</name>
+                    <value>/user/cloudera/ufooutput/results</value>
+                </property>
+                <property>
+                    <name>mapreduce.inputformat.class</name>
                     <value>org.apache.hadoop.mapreduce.lib.join.CompositeInputFormat</value>
+                </property>
+                <property>
+                    <name>mapred.mapper.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>mapred.reducer.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>keyIndex</name>
+                    <value>0</value>
                 </property>
             </configuration>
         </map-reduce>
