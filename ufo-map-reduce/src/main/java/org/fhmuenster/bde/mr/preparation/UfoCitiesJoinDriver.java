@@ -69,8 +69,7 @@ public class UfoCitiesJoinDriver {
         mapJoin.setInputFormatClass(CompositeInputFormat.class);
 
         // Jobs starten
-        List<Job> jobsToExecute = Lists.newArrayList(mapJoin);
-        // List<Job> jobsToExecute = Lists.newArrayList(sortUfoJob, sortCitiesJob, mapJoin);
+        List<Job> jobsToExecute = Lists.newArrayList(sortUfoJob, sortCitiesJob, mapJoin);
 
         int exitStatus = 0;
         for (Job job : jobsToExecute) {

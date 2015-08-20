@@ -108,6 +108,9 @@
         <map-reduce>
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}/user/cloudera/ufooutput/results"/>
+            </prepare>
             <configuration>
                 <property>
                     <name>mapreduce.input.keyvaluelinerecordreader.key.value.separator</name>
