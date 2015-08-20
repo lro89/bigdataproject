@@ -1,0 +1,38 @@
+DROP TABLE IF EXISTS `ufo_counties`;
+DROP TABLE IF EXISTS `hbase_ufo_county`;
+DROP TABLE IF EXISTS `hbase_ufo_county_shapes`;
+
+
+CREATE EXTERNAL TABLE ufo_counties(City String, Date String, State String, Shape String, Duration String, Description String, Posted String, County String, CountyCode String) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\073' 
+STORED AS TEXTFILE 
+LOCATION '/user/cloudera/ufooutput/results';
+
+
+CREATE TABLE hbase_ufo_county(key string, county String, countycode String, sum_ufos int) 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,a:county,a:countycode,a:sum_ufos")
+TBLPROPERTIES ("hbase.table.name" = "hbase_ufo_county");
+
+
+INSERT OVERWRITE TABLE hbase_ufo_county 
+select county as key, county, countycode, count(city) anz
+from ufo_counties 
+group by county, countycode
+having county != ""
+and countycode !="";
+
+
+CREATE TABLE hbase_ufo_county_shapes(key string, county String, countycode String, shape String, sum_ufos int) 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,a:county,a:countycode,a:shape,a:sum_ufos")
+TBLPROPERTIES ("hbase.table.name" = "hbase_ufo_county_shapes");
+
+INSERT OVERWRITE TABLE hbase_ufo_county_shapes 
+select county as key, county, countycode, shape, count(city) anz
+from ufo_counties 
+group by county, countycode, shape
+having county != ""
+and countycode !=""
+and shape !="";
+

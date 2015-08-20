@@ -1,5 +1,8 @@
 
-<workflow-app name="UfoCityJoin" xmlns="uri:oozie:workflow:0.4">
+<workflow-app name="FillFrontendTables" xmlns="uri:oozie:workflow:0.4">
+    <global>
+        <job-xml>hive-site.xml</job-xml>
+    </global>
     <start to="CitySort"/>
     <action name="CitySort">
         <map-reduce>
@@ -166,6 +169,15 @@
                 </property>
             </configuration>
         </map-reduce>
+        <ok to="HiveSkript"/>
+        <error to="kill"/>
+    </action>
+    <action name="HiveSkript">
+        <hive xmlns="uri:oozie:hive-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>/user/cloudera/Scripts/UfoCountiesScript</script>
+        </hive>
         <ok to="end"/>
         <error to="kill"/>
     </action>
