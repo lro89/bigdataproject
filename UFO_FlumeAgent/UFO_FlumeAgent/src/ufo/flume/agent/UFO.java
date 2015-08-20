@@ -2,6 +2,9 @@ package ufo.flume.agent;
 
 
 import java.nio.charset.Charset;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 // Flume:
 import org.apache.flume.Context;
@@ -64,9 +67,26 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 			String eventLine = "";
 			
 			for(int i=0;i<7;i++){
+				
 				tmp = elements.get(currentIndex + i).text();
 				tmp = tmp.replace(';', ':');
 				tmp = tmp.replace('\"', '\'');
+				
+				
+				if(i == 0){
+					// Es wird aktuell das Datumsfeld durchlaufen. Dieses muss umformatiert werden:
+					try{
+						DateFormat oldFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
+						Date date = oldFormat.parse(tmp);
+						
+						DateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
+						tmp = newFormat.format(date);
+						
+					}
+					catch(Exception ex){
+						tmp = ""; 
+					}
+				}
 				
 				eventLine += "\"" + tmp + "\"";
 				
@@ -92,7 +112,7 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 			
 			if(e != null){
 				getChannelProcessor().processEvent(e);
-				
+			
 				return Status.READY;
 			}
 			else
