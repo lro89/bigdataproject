@@ -1,5 +1,9 @@
 package org.fhmuenster.bde.entity;
 
+/**
+ * Klasse um, die Ufos pro County abzubilden.
+ *
+ */
 public class UfoPerCounty {
 
 	/**
