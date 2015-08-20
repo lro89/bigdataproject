@@ -23,7 +23,9 @@ public class CitiesCountiesRepository {
 
 	private String tableName = "cities_counties";
 
-	// column family
+	private String columnFamily = "cc";
+
+	// byte werte
 	public static byte[] CF_CC = Bytes.toBytes("cc");
 
 	private byte[] qCity = Bytes.toBytes("city");
@@ -35,7 +37,7 @@ public class CitiesCountiesRepository {
 	 * @return Liste aller CitiesCounties
 	 */
 	public List<CitiesCounties> findAll() {
-		return hbaseTemplate.find(tableName, "cc",
+		return hbaseTemplate.find(tableName, columnFamily,
 				new RowMapper<CitiesCounties>() {
 					@Override
 					public CitiesCounties mapRow(Result result, int rowNum)
