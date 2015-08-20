@@ -25,6 +25,7 @@
 1. Order *Workflows* muss ins HDFS unter /user/cloudera/ geladen werden
 2. Ebenso die Ordner *Scripts* und *Datasources*
 3. Auf der Cloudera-VM (nicht im HDFS) ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
+4. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
 
 ### Ausführungsreihenfolge
 1. ExtractUFOData
