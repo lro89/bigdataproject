@@ -25,15 +25,16 @@
 2. Ebenso die Ordner *Scripts* und *Datasources*
 3. Auf der Cloudera-VM ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
 
-**Start**: <code>oozie job -run -oozie http://quickstart.cloudera:11000/oozie/ -config workflows/job.properties</code> <br>
+**Start**: <code>oozie job -run -oozie http://quickstart.cloudera:11000/oozie/ -config workflows/**WORKFLOW**/job.properties</code> <br>
 **Kontolle**: <code>oozie job -oozie http://quickstart.cloudera:11000/oozie/ -info 0000001-150816094600884-oozie-oozi-W</code> <br>
 **Logs:** <code>oozie job -oozie http://quickstart.cloudera:11000/oozie/ -log 0000001-150816094600884-oozie-oozi-W</code> <br>
 
 
 
 
-## MapReduce
+## MapReduce - manueller Start
 1. Maven muss auf der VM installiert sein!
+2. <code>hadoop jar ufo-map-reduce-1.0-SNAPSHOT-mrjob.jar ufojoin /user/cloudera/Staging/UFO /user/cloudera/Datasources/Meta/CountiesCitiesCode ufooutput</code>
 
 ## Frontend
 Eclipse Maven Project: UFO_PROJECT<br>
