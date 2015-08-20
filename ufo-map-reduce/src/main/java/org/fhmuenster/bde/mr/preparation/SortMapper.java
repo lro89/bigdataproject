@@ -47,7 +47,6 @@ public class SortMapper extends Mapper<LongWritable, Text, Text, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         value.set(value.toString().replace("\"", ""));
-        System.out.println(value);
         Iterable<String> values = splitter.split(value.toString());
 
         // Festlegung des Join-Keys mit Angabe der Spalte "keyIndex"
