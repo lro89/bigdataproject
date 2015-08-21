@@ -84,7 +84,7 @@
                 </property>
                 <property>
                     <name>mapreduce.input.fileinputformat.inputdir</name>
-                    <value>/user/cloudera/Staging/UFO</value>
+                    <value>/user/cloudera/Flume/UFO</value>
                 </property>
                 <property>
                     <name>mapreduce.job.reduce.class</name>
