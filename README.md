@@ -60,3 +60,21 @@ Server starten: java -jar target/ufoproject-0.0.1-SNAPSHOT.jar<br>
 ## Aufgetrene Probleme
 - Oozie-Konfiguration (Herausfinden der richtigen Libs, mapreduce.input.format.type vs mapreduce.inputformat.type
 - Proxy-Einstellungen für Flume?
+
+#### Oozie Workflow 'FillFrontendTables' kann Action 'HiveSkript' nicht ausführen
+Fehler: 
+```
+Failing Oozie Launcher, Main class [org.apache.oozie.action.hadoop.HiveMain], main() threw exception, hive-site.xml (Permission denied)     
+java.io.FileNotFoundException: hive-site.xml (Permission denied) at java.io.FileOutputStream.open(Native Method) at  
+java.io.FileOutputStream.<init>(FileOutputStream.java:221) 
+...
+```
+Behebung:   
+- HDFS Ordner 'FillFrontendTables' löschen
+- Ordner offline bearbeiten:
+  - Die hive-site.xml in 'hive-oozie-site.xml' umbenennen
+  - In der workflow.xml die hive-oozie-site.xml als job-xml angeben
+  - Den libraries-libs.zip Ordner neu packen mit der neuen hive-oozie-site.xml und workflow.xml (die alten Dateien löschen)
+- FillFrontendTables ins HDFS hochladen
+- Darin, den libraries-libs.zip Ordner hochladen und anschliessend in 'lib' umbenennen
+
