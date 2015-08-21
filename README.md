@@ -57,4 +57,6 @@ Auf der Console in das UFO_PROJECT wechseln, anschließend folgendes ausführen:
 mvn install<br>
 Server starten: java -jar target/ufoproject-0.0.1-SNAPSHOT.jar<br>
 
-
+## Aufgetrene Probleme
+- Oozie-Konfiguration (Herausfinden der richtigen Libs, mapreduce.input.format.type vs mapreduce.inputformat.type
+- Proxy-Einstellungen für Flume?
