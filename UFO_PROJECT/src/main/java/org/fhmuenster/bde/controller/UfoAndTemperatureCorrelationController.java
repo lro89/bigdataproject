@@ -23,7 +23,7 @@ public class UfoAndTemperatureCorrelationController {
 		// List<UfoAndTemperatureCorrelation> ufoTempCorrList =
 		// ufoByTemperatureService
 		// .findAll();
-		// FIXME aus HBase holen by shape
+		// FIXME aus HBase holen
 		// Testdaten
 		List<UfoAndTemperatureCorrelation> ufoTempCorrList = new ArrayList<UfoAndTemperatureCorrelation>();
 		UfoAndTemperatureCorrelation uatc1 = new UfoAndTemperatureCorrelation(

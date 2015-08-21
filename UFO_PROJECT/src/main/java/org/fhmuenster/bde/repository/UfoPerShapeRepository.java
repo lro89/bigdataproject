@@ -21,16 +21,16 @@ public class UfoPerShapeRepository {
 	@Inject
 	private HbaseTemplate hbaseTemplate;
 
-	private String tableName = "ufo_per_shape";
+	private String tableName = "hbase_ufo_county_shapes";
 
 	// byte werte mit hbase names
 	// column family
-	public static byte[] CF_CC = Bytes.toBytes("cc");
+	public static byte[] CF_CC = Bytes.toBytes("a");
 
 	// columns
-	private byte[] qCode = Bytes.toBytes("code");
+	private byte[] qCode = Bytes.toBytes("countycode");
 
-	private byte[] qValue = Bytes.toBytes("number");
+	private byte[] qValue = Bytes.toBytes("sum_ufos");
 
 	private byte[] qCounty = Bytes.toBytes("county");
 
