@@ -41,10 +41,15 @@ public class UfoPerCountyRepository {
 					@Override
 					public UfoPerCounty mapRow(Result result, int rowNum)
 							throws Exception {
+						// Operationen fuer int werte muessen einzeln
+						// durchgefuehrt werden. Sonst wird der int wert nicht
+						// uebernommen.
+						String valueString = Bytes.toString(result.getValue(
+								CF_CC, qValue));
+						int value = Integer.valueOf(valueString);
 						return new UfoPerCounty(Bytes.toString(result.getValue(
-								CF_CC, qCode)), Integer.getInteger(Bytes
-								.toString(result.getValue(CF_CC, qValue))),
-								Bytes.toString(result.getValue(CF_CC, qCounty)));
+								CF_CC, qCode)), value, Bytes.toString(result
+								.getValue(CF_CC, qCounty)));
 					}
 				});
 	}
