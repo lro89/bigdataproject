@@ -77,4 +77,5 @@ Behebung:
   - Den libraries-libs.zip Ordner neu packen mit der neuen hive-oozie-site.xml und workflow.xml (die alten Dateien löschen)
 - FillFrontendTables ins HDFS hochladen
 - Darin, den libraries-libs.zip Ordner hochladen und anschliessend in 'lib' umbenennen
+- Oozie neustarten
 
