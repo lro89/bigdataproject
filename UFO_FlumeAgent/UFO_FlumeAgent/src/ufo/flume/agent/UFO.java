@@ -21,15 +21,16 @@ import org.apache.flume.source.AbstractSource;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UFO extends AbstractSource implements Configurable, PollableSource{
 
+	 private static final Logger logger =
+			 LoggerFactory.getLogger(UFO.class);
+	
 	private Document doc;
 	private Elements elements;
-	private String tmpLine;
-	private int tmpCounter;
-	private boolean finished;
 	
 	private int currentIndex = 0;
 	
@@ -39,19 +40,24 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 	public void configure(Context context) {
 		try{
 			String website = context.getString("website");
+			
+			//Proxy-Einstellungen für die Cluster-VM !
+			System.setProperty("http.proxyHost", "10.60.17.102");
+			System.setProperty("http.proxyPort", "8080");
+			System.setProperty("https.proxyHost", "10.60.17.102");
+			System.setProperty("https.proxyPort", "8080");
+			
 			doc = Jsoup.connect(website)
 					.maxBodySize(0)
 					.timeout(600000)
 					.get();
 			elements = doc.select("td");
 		}
-		catch(Exception ex){}
+		catch(Exception ex){
+			logger.debug(ex.toString());
+		}
 		
 		eventBuilder = new EventBuilder();
-		
-		tmpLine = "";
-		tmpCounter = 0;
-		finished = false;
 		
 	}
 
@@ -61,6 +67,7 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 	}
 	
 	private Event getNextEvent(){
+		
 		try {
 			Event result = null;
 			String tmp = null;
@@ -69,9 +76,11 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 			for(int i=0;i<7;i++){
 				
 				tmp = elements.get(currentIndex + i).text();
-				tmp = tmp.replace(';', ':');
-				tmp = tmp.replace('\"', '\'');
 				
+				if(tmp != null){
+					tmp = tmp.replace(';', ':');
+					tmp = tmp.replace('\"', '\'');
+				}
 				
 				if(i == 0){
 					// Es wird aktuell das Datumsfeld durchlaufen. Dieses muss umformatiert werden:
@@ -98,7 +107,7 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 			
 			result = eventBuilder.withBody(eventLine, Charset.defaultCharset());
 			return result;
-		} catch (Exception e) {
+		} catch (IndexOutOfBoundsException e) {
 			return null;
 		}
 	}
@@ -112,7 +121,7 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 			
 			if(e != null){
 				getChannelProcessor().processEvent(e);
-			
+				
 				return Status.READY;
 			}
 			else

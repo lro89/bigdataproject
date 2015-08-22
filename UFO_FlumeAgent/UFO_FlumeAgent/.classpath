@@ -122,6 +122,6 @@
 	<classpathentry kind="lib" path="/usr/lib/flume-ng/lib/velocity-1.7.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/flume-ng/lib/xz-1.0.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/flume-ng/lib/zkclient-0.3.jar"/>
-	<classpathentry kind="lib" path="/home/cloudera/labs/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="libext/jsoup-1.8.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
