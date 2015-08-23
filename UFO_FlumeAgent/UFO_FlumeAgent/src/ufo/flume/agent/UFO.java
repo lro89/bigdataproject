@@ -39,13 +39,26 @@ public class UFO extends AbstractSource implements Configurable, PollableSource{
 	@Override
 	public void configure(Context context) {
 		try{
+			// Webseite aus der Konfig-Datei lesen, die geparsed werden soll:
 			String website = context.getString("website");
 			
-			//Proxy-Einstellungen für die Cluster-VM !
-			System.setProperty("http.proxyHost", "10.60.17.102");
-			System.setProperty("http.proxyPort", "8080");
-			System.setProperty("https.proxyHost", "10.60.17.102");
-			System.setProperty("https.proxyPort", "8080");
+			// Proxy-Einstellungen für die Cluster-VM setzen (falls welche in der Konfig-Datei angegeben!):
+			String httpProxyHost = context.getString("httpProxyHost");
+			String httpProxyPort = context.getString("httpProxyPort");
+			String httpsProxyHost = context.getString("httpsProxyHost");
+			String httpsProxyPort = context.getString("httpsProxyPort");
+			
+			if(httpProxyHost != null)
+				System.setProperty("http.proxyHost", httpProxyHost);
+			
+			if(httpProxyPort != null)
+				System.setProperty("http.proxyPort", httpProxyPort);
+			
+			if(httpsProxyHost != null)
+				System.setProperty("https.proxyHost", httpsProxyHost);
+			
+			if(httpsProxyPort != null)
+				System.setProperty("https.proxyPort", httpsProxyPort);
 			
 			doc = Jsoup.connect(website)
 					.maxBodySize(0)
