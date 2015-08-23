@@ -33,10 +33,14 @@
 4. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
 
 ### Ausführungsreihenfolge
+#### Manuell
 1. ExtractUFOData
 2. ExtractWeatherTables
 3. LoadStaticData
 4. FillFrontendTables
+
+#### Vollständig automatisiert
+1. Workflows (!!! ACHTUNG !!! - auf der Quickstart-VM ist zwischendurch immer wieder der Status des HBase-Masters und des HBase-Regionservers zu prüfen. Laufen diese nicht, bricht der Workflow ab)
 
 ### Kommandos
 **Start**: <code>oozie job -run -oozie http://quickstart.cloudera:11000/oozie/ -config workflows/**WORKFLOW**/job.properties</code> <br>
