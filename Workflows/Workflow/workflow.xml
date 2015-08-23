@@ -1,0 +1,233 @@
+<workflow-app name="Workflow" xmlns="uri:oozie:workflow:0.4">
+    <global>
+        <job-xml>hive-site.xml</job-xml>
+    </global>
+    <start to="DailyData"/>
+    <action name="DailyData">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}/user/cloudera/Staging/DailyData"/>
+            </prepare>
+            <script>/user/cloudera/Scripts/LoadMultipleFilesInFolders.pig</script>
+              <param>pfad=${pfad1}</param>
+              <param>savefileto=${savefileto1}</param>
+        </pig>
+        <ok to="Daily"/>
+        <error to="kill"/>
+    </action>
+    <action name="Daily">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}/user/cloudera/Staging/Daily"/>
+            </prepare>
+            <script>/user/cloudera/Scripts/LoadMultipleFilesInFolders.pig</script>
+              <param>pfad=${pfad2}</param>
+              <param>savefileto=${savefileto2}</param>
+        </pig>
+        <ok to="CreateWeatherTables"/>
+        <error to="kill"/>
+    </action>
+    <action name="CreateWeatherTables">
+        <hive xmlns="uri:oozie:hive-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>/user/cloudera/Scripts/CreateTablesWeather</script>
+        </hive>
+        <ok to="HiveSkript"/>
+        <error to="kill"/>
+    </action>
+	<action name="HiveSkript">
+        <hive xmlns="uri:oozie:hive-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>/user/cloudera/Scripts/ImportMetadataScript</script>
+        </hive>
+        <ok to="CitySort"/>
+        <error to="kill"/>
+    </action>
+    <action name="CitySort">
+        <map-reduce>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}/user/cloudera/ufooutput"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>mapreduce.job.map.class</name>
+                    <value>org.fhmuenster.bde.mr.preparation.SortMapper</value>
+                </property>
+                <property>
+                    <name>mapred.mapper.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>mapred.reducer.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.output.key.class</name>
+                    <value>org.apache.hadoop.io.Text</value>
+                </property>
+                <property>
+                    <name>mapreduce.output.fileoutputformat.outputdir</name>
+                    <value>/user/cloudera/ufooutput/CITIES_sorted</value>
+                </property>
+                <property>
+                    <name>mapreduce.input.fileinputformat.inputdir</name>
+                    <value>/user/cloudera/Datasources/Meta/CountiesCitiesCode </value>
+                </property>
+                <property>
+                    <name>mapreduce.job.reduce.class</name>
+                    <value>org.fhmuenster.bde.mr.preparation.SortReducer</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.name</name>
+                    <value>City Sort</value>
+                </property>
+                <property>
+                    <name>keyIndex</name>
+                    <value>0</value>
+                </property>
+                <property>
+                    <name>separator</name>
+                    <value>;</value>
+                </property>
+            </configuration>
+        </map-reduce>
+        <ok to="UfoSort"/>
+        <error to="kill"/>
+    </action>
+    <action name="UfoSort">
+        <map-reduce>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapreduce.job.map.class</name>
+                    <value>org.fhmuenster.bde.mr.preparation.SortMapper</value>
+                </property>
+                <property>
+                    <name>mapred.mapper.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>mapred.reducer.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.output.key.class</name>
+                    <value>org.apache.hadoop.io.Text</value>
+                </property>
+                <property>
+                    <name>mapreduce.output.fileoutputformat.outputdir</name>
+                    <value>/user/cloudera/ufooutput/UFO_sorted</value>
+                </property>
+                <property>
+                    <name>mapreduce.input.fileinputformat.inputdir</name>
+                    <value>/user/cloudera/Flume/UFO</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.reduce.class</name>
+                    <value>org.fhmuenster.bde.mr.preparation.SortReducer</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.name</name>
+                    <value>Ufo Sort</value>
+                </property>
+                <property>
+                    <name>keyIndex</name>
+                    <value>1</value>
+                </property>
+                <property>
+                    <name>separator</name>
+                    <value>;</value>
+                </property>
+            </configuration>
+        </map-reduce>
+        <ok to="Join"/>
+        <error to="kill"/>
+    </action>
+    <action name="Join">
+        <map-reduce>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}/user/cloudera/ufooutput/results"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>mapreduce.input.keyvaluelinerecordreader.key.value.separator</name>
+                    <value>;</value>
+                </property>
+                <property>
+                    <name>mapreduce.join.expr</name>
+                    <value>inner(tbl(org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat,&quot;ufooutput/UFO_sorted&quot;),tbl(org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat,&quot;ufooutput/CITIES_sorted&quot;))</value>
+                </property>
+                <property>
+                    <name>separator</name>
+                    <value>;</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.name</name>
+                    <value>Join</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.map.class</name>
+                    <value>org.fhmuenster.bde.mr.preparation.JoinValuesMapper</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.reduce.class</name>
+                    <value>org.apache.hadoop.mapreduce.Reducer</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.output.key.class</name>
+                    <value>org.apache.hadoop.io.NullWritable</value>
+                </property>
+                <property>
+                    <name>mapreduce.input.fileinputformat.inputdir</name>
+                    <value>/user/cloudera/ufooutput/CITIES_sorted,/user/cloudera/ufooutput/UFO_sorted</value>
+                </property>
+                <property>
+                    <name>mapreduce.output.fileoutputformat.outputdir</name>
+                    <value>/user/cloudera/ufooutput/results</value>
+                </property>
+                <property>
+                    <name>mapreduce.inputformat.class</name>
+                    <value>org.apache.hadoop.mapreduce.lib.join.CompositeInputFormat</value>
+                </property>
+                <property>
+                    <name>mapred.mapper.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>mapred.reducer.new-api</name>
+                    <value>true</value>
+                </property>
+                <property>
+                    <name>keyIndex</name>
+                    <value>0</value>
+                </property>
+            </configuration>
+        </map-reduce>
+        <ok to="HiveSkriptUfo"/>
+        <error to="kill"/>
+    </action>
+    <action name="HiveSkriptUfo">
+        <hive xmlns="uri:oozie:hive-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>/user/cloudera/Scripts/UfoCountiesScript</script>
+        </hive>
+        <ok to="end"/>
+        <error to="kill"/>
+    </action>
+    <kill name="kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>
