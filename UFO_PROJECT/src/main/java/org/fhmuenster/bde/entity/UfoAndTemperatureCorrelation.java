@@ -2,7 +2,7 @@ package org.fhmuenster.bde.entity;
 
 /**
  * Klasse um, die Ufos korreliert mit der Temperatur abzubilden.
- *
+ * 
  */
 public class UfoAndTemperatureCorrelation {
 
@@ -17,7 +17,7 @@ public class UfoAndTemperatureCorrelation {
 	private Integer value;
 
 	/**
-	 * Bezeichung der County
+	 * Bezeichnung der County
 	 */
 	private Integer temperature;
 

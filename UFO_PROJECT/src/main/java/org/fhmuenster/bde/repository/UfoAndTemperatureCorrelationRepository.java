@@ -17,20 +17,20 @@ public class UfoAndTemperatureCorrelationRepository {
 	@Inject
 	private HbaseTemplate hbaseTemplate;
 
-	private String tableName = "ufo_and temp";
+	private String tableName = "hbase_ufos_wheater";
 
-	private String columnFamily = "cc";
+	private String columnFamily = "a";
 
 	// byte werte mit hbase names
-	public static byte[] CF_CC = Bytes.toBytes("cc");
+	public static byte[] CF_CC = Bytes.toBytes("a");
 
-	private byte[] qMonth = Bytes.toBytes("month");
+	private byte[] qMonth = Bytes.toBytes("monat");
 
-	private byte[] qYear = Bytes.toBytes("year");
+	private byte[] qYear = Bytes.toBytes("jahr");
 
-	private byte[] qValue = Bytes.toBytes("number");
+	private byte[] qValue = Bytes.toBytes("anz");
 
-	private byte[] qTemp = Bytes.toBytes("temperature");
+	private byte[] qTemp = Bytes.toBytes("avg_tmp");
 
 	/**
 	 * Liefert alle UFOs und Temperaturkorrelationen aus HBase aus.
@@ -43,13 +43,19 @@ public class UfoAndTemperatureCorrelationRepository {
 					@Override
 					public UfoAndTemperatureCorrelation mapRow(Result result,
 							int rowNum) throws Exception {
+						// Operationen fuer int werte muessen einzeln
+						// durchgefuehrt werden. Sonst wird der int wert nicht
+						// uebernommen.
+						String valueString = Bytes.toString(result.getValue(
+								CF_CC, qValue));
+						int value = Integer.valueOf(valueString);
+						String tempString = Bytes.toString(result.getValue(
+								CF_CC, qTemp));
+						int temp = Integer.valueOf(tempString);
 						return new UfoAndTemperatureCorrelation(Bytes
 								.toString(result.getValue(CF_CC, qYear)), Bytes
 								.toString(result.getValue(CF_CC, qMonth)),
-								Integer.getInteger(Bytes.toString(result
-										.getValue(CF_CC, qValue))), Integer
-										.getInteger(Bytes.toString(result
-												.getValue(CF_CC, qTemp))));
+								value, temp);
 					}
 				});
 	}

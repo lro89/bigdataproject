@@ -44,7 +44,7 @@ public class UfoPerShapeRepository {
 	public List<UfoPerCounty> findFilterByShape(String shape) {
 		return hbaseTemplate.find(tableName, new Scan(Bytes.toBytes("0"),
 				new SingleColumnValueFilter(CF_CC, qShape, CompareOp.EQUAL,
-						new BinaryComparator(qShape))),
+						new BinaryComparator(Bytes.toBytes(shape)))),
 				new RowMapper<UfoPerCounty>() {
 					@Override
 					public UfoPerCounty mapRow(Result result, int rowNum)
