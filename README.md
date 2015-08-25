@@ -5,10 +5,14 @@
   sudo service hbase-master start<br>
   sudo service hbase-regionserver start<br>
 
-2. Laden der Source-Ordner in hdfs:/user/cloudera/ <br>
-  2.1. Workflows: Enthält die Oozie-Workflows samt benötigter Lib-Dateien <br>
-  2.2. Datasources: Enthält die Rohdaten für die Pipeline <br>
-  2.3. Scripts: Enthält alle benötigten Skripte (Python, Pig...) <br>
+2. Beschreibung der Ordner/ <br>
+  2.1. Datasources: Enthält die Rohdaten für die Pipeline <br>
+  2.2. Scripts: Enthält alle benötigten Skripte (Python, Pig...) <br>
+  2.3. UFO_FlumeAgent: Enthält das Java-Projekt für die *CustomSource* und weitere Ressourcen für den Flume-Agent (Eclipse-Project)
+  2.4. UFO_PROJECT: Enthält das Java-Spring-Projekt für das Frontend (Eclipse-Maven-Projekt)
+  2.5. Workflows: Enthält die Oozie-Workflows samt benötigter Lib-Dateien <br>
+  2.6. ZIP-Dateien: Enthält vorbereitete Archive für den Import in das HDFS inkl. aller benötigten *Libs* (u.a. für HBase-Ausführung in Oozie)
+  2.7. ufo-map-reduce: Enthält ein Java-Projekt mit einem implementierten MapReduce-Algorithmus auf Basis der neuen API. Die JAR wird im Workflow verwendet.
 
 
 ## Datenherkunft
