@@ -16,7 +16,7 @@
 				var data = new google.visualization.DataTable();
 				data.addColumn('string', 'monthYear');
 				data.addColumn('number', 'Anzahl UFO-Sichtungen');
-				data.addColumn('number', 'Temperatur (in C)');
+				data.addColumn('number', 'Sonnenkraft (in Std.)');
 				
 				//Daten als array parsen
 				var obj = /*[[${ufoTempCorrData}]]*/;
@@ -54,7 +54,7 @@
 
 		<div class="row">
 			<div class="col-md-8">
-				<h3 class="page-header">UFO-Sichtungen und Temperatur
+				<h3 class="page-header">UFO-Sichtungen und Sonnenkraft
 					Korrelation in gesamt Kalifornien</h3>
 			</div>
 		</div>
@@ -73,14 +73,14 @@
 						<tr>
 							<th class="col-md-1">Jahr und Monat</th>
 							<th class="col-md-1">Anzahl UFO-Sichtungen</th>
-							<th class="col-md-2">&empty; Temperatur (in C)</th>
+							<th class="col-md-2">&empty; Sonnenkraft (in Std.)</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="ufoTempCorr : ${ufoTempCorrList}">
-							<td th:text="${ufoTempCorr.yearMonth}">2015/01</td>
-							<td th:text="${ufoTempCorr.value}">10</td>
-							<td th:text="${ufoTempCorr.temperature}">25</td>
+						<tr th:each="ufoSolarCorr : ${ufoSolarCorrList}">
+							<td th:text="${ufoSolarCorr.yearMonth}">2015/01</td>
+							<td th:text="${ufoSolarCorr.value}">10</td>
+							<td th:text="${ufoSolarCorr.solar}">12</td>
 						</tr>
 					</tbody>
 				</table>

@@ -26,9 +26,6 @@ public class UfoAndTemperatureCorrelationServiceImpl implements
 	public List<UfoAndTemperatureCorrelation> findAll() {
 		List<UfoAndTemperatureCorrelation> ufoAndTempList = ufoAndTemperatureCorrelationRepository
 				.findAll();
-		// FIXME Ausgabe rausnehmen
-		System.out.println("Number of ufosAndTemp = " + ufoAndTempList.size());
-		System.out.println(ufoAndTempList);
 		return ufoAndTempList;
 	}
 }

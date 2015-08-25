@@ -6,6 +6,9 @@ import org.springframework.data.hadoop.config.annotation.EnableHadoop;
 import org.springframework.data.hadoop.config.annotation.SpringHadoopConfigurerAdapter;
 import org.springframework.data.hadoop.config.annotation.builders.HadoopConfigConfigurer;
 
+/**
+ * Hadoop Konfiguration
+ */
 @Configuration
 @EnableHadoop
 @ComponentScan(basePackages = { "org.fhmuenster.bde.service",

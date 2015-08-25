@@ -26,10 +26,6 @@ public class UfoPerShapeServiceImpl implements UfoPerShapeService {
 	public List<UfoPerCounty> findFilterByShape(String shape) {
 		List<UfoPerCounty> ufoPerShapeList = ufoPerShapeRepository
 				.findFilterByShape(shape);
-		// FIXME Ausgabe rausnehmen
-		System.out
-				.println("Number of ufosPerShape = " + ufoPerShapeList.size());
-		System.out.println(ufoPerShapeList);
 		return ufoPerShapeList;
 	}
 }

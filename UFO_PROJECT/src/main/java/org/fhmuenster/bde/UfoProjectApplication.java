@@ -12,8 +12,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * Application Klasse.
- * 
+ * Application Klasse. Konfiguration des Webprojektes.
  */
 @SpringBootApplication
 @ComponentScan(basePackages = { "org.fhmuenster.bde.controller",
