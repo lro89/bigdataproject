@@ -5,19 +5,16 @@ import java.util.Set;
 
 /**
  * Arten von UFO-Shapes.
- *
+ * 
  */
 public enum ShapeType {
 
-	CHANGED("changed"), CHANGING("Changing"), CHEVRON("Chevron"), CIGAR("Cigar"), CIRCLE(
-			"Circle"), CONE("Cone"), CRESCENT("Crescent"), CROSS("Cross"), CYLINDER(
-			"Cylinder"), DELTA("Delta"), DIAMOND("Diamond"), DISK("Disk"), DOME(
-			"Dome"), EGG("Egg"), FIREBALL("Fireball"), FLARE("Flare"), FLASH(
-			"Flash"), FORMATION("Formation"), HEXAGON("Hexagon"), LIGHT("Light"), OTHER(
-			"Other"), OVAL("Oval"), PYRAMID("pyramid"), RECTANGLE("Rectangle"), ROUND(
-			"Round"), SPHERE("Sphere"), TEARDROP("Teardrop"), TRIANGLE(
-			"Triangle"), TRIANGULAR("TRIANGULAR"), UNKNOWN("Unknown"), UNSPECIFIED(
-			"Unspecified");
+	CHANGING("Changing"), CHEVRON("Chevron"), CIGAR("Cigar"), CIRCLE("Circle"), CONE(
+			"Cone"), CROSS("Cross"), CYLINDER("Cylinder"), DIAMOND("Diamond"), DISK(
+			"Disk"), EGG("Egg"), FIREBALL("Fireball"), FLARE("Flare"), FLASH(
+			"Flash"), FORMATION("Formation"), LIGHT("Light"), OTHER("Other"), OVAL(
+			"Oval"), RECTANGLE("Rectangle"), ROUND("Round"), SPHERE("Sphere"), TEARDROP(
+			"Teardrop"), TRIANGLE("Triangle"), UNKNOWN("Unknown");
 
 	/**
 	 * Liefert ein Set aller Shape-Arten
