@@ -26,3 +26,10 @@ CREATE EXTERNAL TABLE dailydata(
  ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
  STORED AS TEXTFILE
  LOCATION '/user/cloudera/Staging/DailyData';
+
+
+drop table if exists `weather_by_station`;
+create table weather_by_station as 
+select station, date, precip, air_max, air_min, soil_max, soil_min, solar, eto, rh_max, rh_min, 'daily' as type from daily
+union all
+select station, date, precip, air_max, air_min, soil_max, soil_min, solar, eto, rh_max, min as rh_min, 'dailydata' as type from dailydata;
