@@ -53,6 +53,6 @@ WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,a:jahr,a:monat,a:anz,a:avg
 TBLPROPERTIES ("hbase.table.name" = "hbase_ufos_wheater");
 
 INSERT OVERWRITE TABLE hbase_ufos_wheater 
-select concat(ufo.jahr,'_',ufo.monat) as key, ufo.jahr, ufo.monat, anz, cast(avg_tmp as int), cast(avg_solar as int)
+select concat(ufo.jahr,'_',if(ufo.monat < 10,'0',''),ufo.monat) as key, ufo.jahr, ufo.monat, anz, cast(avg_tmp as int), cast(avg_solar as int)
 from staging_ufo_count_ca ufo
 join staging_wheater_data_aggr aggr on aggr.jahr = ufo.jahr and aggr.monat = ufo.monat;
