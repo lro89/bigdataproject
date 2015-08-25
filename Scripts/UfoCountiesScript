@@ -32,7 +32,7 @@ WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,a:county,a:countycode,a:sh
 TBLPROPERTIES ("hbase.table.name" = "hbase_ufo_county_shapes");
 
 INSERT OVERWRITE TABLE hbase_ufo_county_shapes 
-select county as key, county, countycode, shape, count(city) anz
+select concat(county,'_',shape) as key, county, countycode, shape, count(city) anz
 from ufo_counties 
 group by county, countycode, shape
 having county != ""
