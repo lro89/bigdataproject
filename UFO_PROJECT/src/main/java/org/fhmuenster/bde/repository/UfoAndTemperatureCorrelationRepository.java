@@ -51,7 +51,10 @@ public class UfoAndTemperatureCorrelationRepository {
 						int value = Integer.valueOf(valueString);
 						String tempString = Bytes.toString(result.getValue(
 								CF_CC, qTemp));
-						int temp = Integer.valueOf(tempString);
+						Integer temp = null;
+						if (tempString != null) {
+							temp = Integer.valueOf(tempString);
+						}
 						return new UfoAndTemperatureCorrelation(Bytes
 								.toString(result.getValue(CF_CC, qYear)), Bytes
 								.toString(result.getValue(CF_CC, qMonth)),
