@@ -75,12 +75,7 @@ java.io.FileOutputStream.<init>(FileOutputStream.java:221)
 ...
 ```
 Behebung:   
-- HDFS Ordner 'FillFrontendTables' löschen
-- Ordner offline bearbeiten:
+- Im HDFS den Ordner 'Workflows/Workflow' bearbeiten:
   - Die hive-site.xml in 'hive-oozie-site.xml' umbenennen
   - In der workflow.xml die hive-oozie-site.xml als job-xml angeben
-  - Den libraries-libs.zip Ordner neu packen mit der neuen hive-oozie-site.xml und workflow.xml (die alten Dateien löschen)
-- FillFrontendTables ins HDFS hochladen
-- Darin, den libraries-libs.zip Ordner hochladen und anschliessend in 'lib' umbenennen
-- Oozie neustarten
 
