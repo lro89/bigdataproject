@@ -59,7 +59,7 @@ Projekt-Properties: Java Compile Level: Java 7<br>
 Auf der Console in das UFO_PROJECT wechseln, anschließend folgendes ausführen:<br>
 <code>mvn install</code> oder <code>mvn clean package</code><br>
 Server starten: <code>java -jar target/ufoproject-0.0.1-SNAPSHOT.jar</code><br>
-
+Die Webanwendung ist unter <code>http://localhost:8080/</code> zu erreichen
 
 ## Bei auftretenden Problemen
 ### Manuelle Ausführung der Einzelschritte in Oozie (**nach vollständig automatisierter Ausführung nicht mehr notwendig!**)
