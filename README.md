@@ -22,15 +22,17 @@
 ## Flume
 1. Als su in /usr/lib/flume-ng/conf/flume-env.sh.template <code>export JAVA_OPTS="-Xms100m -Xmx2000m -Dcom.sun.management.jmxremote"
 </code> einkommentieren. Template aus dem Namen entfernen
-2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP entpacken
-3. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
+2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP 'Flume_Plugin.zip'entpacken
+3. Im HDFS unter 'user/cloudera/' die Ordnerstruktur 'Flume/UFO' anlegen (sollte am Ende folgendermaßen aussehen: 'user/cloudera/Flume/UFO'). In den Ordner 'UFO' wird später der Output des Flume-Agents geschrieben.
+4. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
 
 ## Oozie-Workflows
 ### Allgemeines
-1. Order *Workflows* muss ins HDFS unter /user/cloudera/ geladen werden
-2. Ebenso die Ordner *Scripts* und *Datasources*
-3. Auf der Cloudera-VM (nicht im HDFS) ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
-4. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
+1. Order *Workflows* muss ins HDFS unter /user/cloudera/ geladen werden. Wenn der Order ein Archiv mit Lib-Dateien vorweist, müssen diese ebenfalls in den entsprechenden Workflow-Ordner entpackt werden. Der Order ist in *lib* umzubenennen.
+2. Die Ordner *Scripts* und *Datasources* müssen ebenfalls auf die oberste Ebene im Cloudera-Order abgelegt werden.
+3. Der Flume-Job muss vor Anstoß der Workflows gelaufen sein, sodass im Order /user/cloudera/Flume/UFO/ eine Datei mit aufbereiteten Ufo-Daten liegt.
+4. Auf der Cloudera-VM (nicht im HDFS) ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
+5. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
 
 ### Ausführungsreihenfolge
 #### Manuell
@@ -65,7 +67,7 @@ Server starten: java -jar target/ufoproject-0.0.1-SNAPSHOT.jar<br>
 - Oozie-Konfiguration (Herausfinden der richtigen Libs, mapreduce.input.format.type vs mapreduce.inputformat.type
 - Proxy-Einstellungen für Flume?
 
-#### Oozie Workflow 'FillFrontendTables' kann Action 'HiveSkript' nicht ausführen
+#### Oozie Workflow kann Action 'HiveSkript' nicht ausführen
 Fehler: 
 ```
 Failing Oozie Launcher, Main class [org.apache.oozie.action.hadoop.HiveMain], main() threw exception, hive-site.xml (Permission denied)     
@@ -74,12 +76,8 @@ java.io.FileOutputStream.<init>(FileOutputStream.java:221)
 ...
 ```
 Behebung:   
-- HDFS Ordner 'FillFrontendTables' löschen
-- Ordner offline bearbeiten:
+- Im HDFS den Ordner 'Workflows/Workflow' bearbeiten:
   - Die hive-site.xml in 'hive-oozie-site.xml' umbenennen
   - In der workflow.xml die hive-oozie-site.xml als job-xml angeben
-  - Den libraries-libs.zip Ordner neu packen mit der neuen hive-oozie-site.xml und workflow.xml (die alten Dateien löschen)
-- FillFrontendTables ins HDFS hochladen
-- Darin, den libraries-libs.zip Ordner hochladen und anschliessend in 'lib' umbenennen
-- Oozie neustarten
+  - Oozie neu starten
 
