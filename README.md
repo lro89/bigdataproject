@@ -22,8 +22,9 @@
 ## Flume
 1. Als su in /usr/lib/flume-ng/conf/flume-env.sh.template <code>export JAVA_OPTS="-Xms100m -Xmx2000m -Dcom.sun.management.jmxremote"
 </code> einkommentieren. Template aus dem Namen entfernen
-2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP entpacken
-3. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
+2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP 'Flume_Plugin.zip'entpacken
+3. Im HDFS unter 'user/cloudera/' die Ordnerstruktur 'Flume/UFO' (sollte am Ende also folgendermaßen aussehen: 'user/cloudera/Flume/UFO'). In den Ordner 'UFO' wird später der Output des Flume-Agents geschrieben.
+4. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
 
 ## Oozie-Workflows
 ### Allgemeines
@@ -66,7 +67,7 @@ Server starten: java -jar target/ufoproject-0.0.1-SNAPSHOT.jar<br>
 - Oozie-Konfiguration (Herausfinden der richtigen Libs, mapreduce.input.format.type vs mapreduce.inputformat.type
 - Proxy-Einstellungen für Flume?
 
-#### Oozie Workflow 'FillFrontendTables' kann Action 'HiveSkript' nicht ausführen
+#### Oozie Workflow kann Action 'HiveSkript' nicht ausführen
 Fehler: 
 ```
 Failing Oozie Launcher, Main class [org.apache.oozie.action.hadoop.HiveMain], main() threw exception, hive-site.xml (Permission denied)     
@@ -78,4 +79,5 @@ Behebung:
 - Im HDFS den Ordner 'Workflows/Workflow' bearbeiten:
   - Die hive-site.xml in 'hive-oozie-site.xml' umbenennen
   - In der workflow.xml die hive-oozie-site.xml als job-xml angeben
+  - Oozie neu starten
 
