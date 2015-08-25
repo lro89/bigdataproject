@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Visualisierung der Ufos pro County und Art.
+ * Visualisierung der Ufos korreliert mit der Temperatur in gesamt Kalifornien.
  */
 @Controller
 public class UfoAndTemperatureCorrelationController {
@@ -24,26 +24,6 @@ public class UfoAndTemperatureCorrelationController {
 	public String getPrimaryRessources(Model model) {
 		List<UfoAndTemperatureCorrelation> ufoTempCorrList = ufoAndTemperatureCorrelationService
 				.findAll();
-
-		// Testdaten
-		// List<UfoAndTemperatureCorrelation> ufoTempCorrList = new
-		// ArrayList<UfoAndTemperatureCorrelation>();
-		// UfoAndTemperatureCorrelation uatc1 = new
-		// UfoAndTemperatureCorrelation(
-		// "2014", "01", 10, 5);
-		// UfoAndTemperatureCorrelation uatc2 = new
-		// UfoAndTemperatureCorrelation(
-		// "2014", "02", 20, 10);
-		// UfoAndTemperatureCorrelation uatc3 = new
-		// UfoAndTemperatureCorrelation(
-		// "2014", "05", 30, 23);
-		// UfoAndTemperatureCorrelation uatc4 = new
-		// UfoAndTemperatureCorrelation(
-		// "2015", "01", 20, 3);
-		// ufoTempCorrList.add(uatc1);
-		// ufoTempCorrList.add(uatc2);
-		// ufoTempCorrList.add(uatc3);
-		// ufoTempCorrList.add(uatc4);
 		model.addAttribute("ufoTempCorrList", ufoTempCorrList);
 
 		// Daten für das Chart als String zusammenbauen

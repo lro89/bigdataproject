@@ -15,8 +15,8 @@
 			function drawVisualization() {
 				var data = new google.visualization.DataTable();
 				data.addColumn('string', 'monthYear');
-				data.addColumn('number', 'Kalifornien');
-				data.addColumn('number', 'Temperatur');
+				data.addColumn('number', 'Anzahl UFO-Sichtungen');
+				data.addColumn('number', 'Temperatur (in C)');
 				
 				//Daten als array parsen
 				var obj = /*[[${ufoTempCorrData}]]*/;
@@ -55,7 +55,7 @@
 		<div class="row">
 			<div class="col-md-8">
 				<h3 class="page-header">UFO-Sichtungen und Temperatur
-					Korrelation</h3>
+					Korrelation in gesamt Kalifornien</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -73,7 +73,7 @@
 						<tr>
 							<th class="col-md-1">Jahr und Monat</th>
 							<th class="col-md-1">Anzahl UFO-Sichtungen</th>
-							<th class="col-md-2">&empty; Temperatur</th>
+							<th class="col-md-2">&empty; Temperatur (in C)</th>
 						</tr>
 					</thead>
 					<tbody>

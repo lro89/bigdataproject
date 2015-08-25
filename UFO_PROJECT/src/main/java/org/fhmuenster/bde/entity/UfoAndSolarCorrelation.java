@@ -1,10 +1,10 @@
 package org.fhmuenster.bde.entity;
 
 /**
- * Klasse um, die Ufos korreliert mit der Temperatur abzubilden.
+ * Klasse um, die Ufos korreliert mit der Sonnenkraft abzubilden.
  * 
  */
-public class UfoAndTemperatureCorrelation {
+public class UfoAndSolarCorrelation {
 
 	/**
 	 * Datum mit Monat und Jahr in der Form: yyyy/mm
@@ -17,16 +17,15 @@ public class UfoAndTemperatureCorrelation {
 	private Integer value;
 
 	/**
-	 * Temperatur in Celsius
-	 * 
+	 * Sonnenkraft
 	 */
-	private Integer temperature;
+	private Integer solar;
 
-	public UfoAndTemperatureCorrelation(String year, String month,
-			Integer value, Integer temperature) {
+	public UfoAndSolarCorrelation(String year, String month, Integer value,
+			Integer solar) {
 		this.yearMonth = year + "/" + month;
 		this.value = value;
-		this.temperature = temperature;
+		this.solar = solar;
 	}
 
 	public String getYearMonth() {
@@ -45,12 +44,12 @@ public class UfoAndTemperatureCorrelation {
 		this.value = value;
 	}
 
-	public Integer getTemperature() {
-		return temperature;
+	public Integer getSolar() {
+		return solar;
 	}
 
-	public void setTemperature(Integer temperature) {
-		this.temperature = temperature;
+	public void setSolar(Integer solar) {
+		this.solar = solar;
 	}
 
 }

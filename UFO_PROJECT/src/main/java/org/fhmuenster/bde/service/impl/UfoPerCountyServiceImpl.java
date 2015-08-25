@@ -23,10 +23,6 @@ public class UfoPerCountyServiceImpl implements UfoPerCountyService {
 	@Override
 	public List<UfoPerCounty> findAll() {
 		List<UfoPerCounty> ufoPerCountyList = ufoPerCountyRepository.findAll();
-		// FIXME Ausgabe rausnehmen
-		System.out.println("Number of ufosPerCounty = "
-				+ ufoPerCountyList.size());
-		System.out.println(ufoPerCountyList);
 		return ufoPerCountyList;
 	}
 }

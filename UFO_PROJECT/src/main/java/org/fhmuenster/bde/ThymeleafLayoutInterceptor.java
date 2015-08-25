@@ -8,7 +8,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
  * Sorgt dafür den Content in default Layout dynamisch zu befüllen.
- *
  */
 public class ThymeleafLayoutInterceptor extends HandlerInterceptorAdapter {
 

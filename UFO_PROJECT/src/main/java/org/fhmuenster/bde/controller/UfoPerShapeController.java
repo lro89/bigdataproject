@@ -29,23 +29,8 @@ public class UfoPerShapeController {
 			@RequestParam(value = "shape") String shape) {
 		List<UfoPerCounty> ufoPerShapeList = ufoPerShapeService
 				.findFilterByShape(shape);
-		// FIXME Testdaten rausnehmen
-		// List<UfoPerCounty> ufoPerShapeList = new ArrayList<UfoPerCounty>();
-		// UfoPerCounty county1 = new UfoPerCounty("us-ca-051", 10,
-		// "Mono County");
-		// UfoPerCounty county2 = new UfoPerCounty("us-ca-071", 120,
-		// "San Bernardino County");
-		// UfoPerCounty county3 = new UfoPerCounty("us-ca-113", 50,
-		// "Yolo County");
-		// UfoPerCounty county4 = new UfoPerCounty("us-ca-033", 80,
-		// "Lake County");
-		// ufoPerShapeList.add(county1);
-		// ufoPerShapeList.add(county2);
-		// ufoPerShapeList.add(county3);
-		// ufoPerShapeList.add(county4);
 		model.addAttribute("ufoPerShapeList", ufoPerShapeList);
 		model.addAttribute("shape", shape);
-
 		return "ufopershape";
 	}
 
