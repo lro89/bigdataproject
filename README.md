@@ -27,10 +27,11 @@
 
 ## Oozie-Workflows
 ### Allgemeines
-1. Order *Workflows* muss ins HDFS unter /user/cloudera/ geladen werden
-2. Ebenso die Ordner *Scripts* und *Datasources*
-3. Auf der Cloudera-VM (nicht im HDFS) ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
-4. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
+1. Order *Workflows* muss ins HDFS unter /user/cloudera/ geladen werden. Wenn der Order ein Archiv mit Lib-Dateien vorweist, müssen diese ebenfalls in den entsprechenden Workflow-Ordner entpackt werden. Der Order ist in *lib* umzubenennen.
+2. Die Ordner *Scripts* und *Datasources* müssen ebenfalls auf die oberste Ebene im Cloudera-Order abgelegt werden.
+3. Der Flume-Job muss vor Anstoß der Workflows gelaufen sein, sodass im Order /user/cloudera/Flume/UFO/ eine Datei mit aufbereiteten Ufo-Daten liegt.
+4. Auf der Cloudera-VM (nicht im HDFS) ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
+5. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
 
 ### Ausführungsreihenfolge
 #### Manuell
