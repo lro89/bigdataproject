@@ -42,10 +42,10 @@ and shape !="";
 
 create table staging_wheater_data as select cast(concat(substring(date,0,4),"-", substring(date,5,2),"-", substring(date,7,2)) as date) as date_format, station, air_max, air_min, solar from weather_by_station;
 
-create table staging_wheater_data_aggr as select date_format, avg((air_max+air_min)/2) avg_tmp, avg(solar) avg_solar from staging_wheater_data
-group by date_format;
+create table staging_wheater_data_aggr as select year(date_format) jahr, month(date_format) monat, avg((air_max+air_min)/2) avg_tmp, avg(solar) avg_solar from staging_wheater_data
+group by year(date_format), month(date_format);
 
-create table staging_ufo_count_ca as select count(*) as anz, date from ufo_counties group by date;
+create table staging_ufo_count_ca as select count(*) as anz, year(date) jahr, month(date) monat from ufo_counties group by year(date), month(date);
 
 CREATE TABLE hbase_ufos_wheater(key string, jahr int, monat int, anz int, avg_tmp int, avg_solar int) 
 STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
@@ -53,6 +53,6 @@ WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,a:jahr,a:monat,a:anz,a:avg
 TBLPROPERTIES ("hbase.table.name" = "hbase_ufos_wheater");
 
 INSERT OVERWRITE TABLE hbase_ufos_wheater 
-select date, year(date) jahr, month(date) monat, anz, cast(avg_tmp as int), cast(avg_solar as int)
+select concat(ufo.jahr,'_',ufo.monat) as key, ufo.jahr, ufo.monat, anz, cast(avg_tmp as int), cast(avg_solar as int)
 from staging_ufo_count_ca ufo
-join staging_wheater_data_aggr aggr on aggr.date_format = ufo.date;
+join staging_wheater_data_aggr aggr on aggr.jahr = ufo.jahr and aggr.monat = ufo.monat;
