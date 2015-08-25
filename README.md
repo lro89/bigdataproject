@@ -23,7 +23,7 @@
 1. Als su in /usr/lib/flume-ng/conf/flume-env.sh.template <code>export JAVA_OPTS="-Xms100m -Xmx2000m -Dcom.sun.management.jmxremote"
 </code> einkommentieren. Template aus dem Namen entfernen
 2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP 'Flume_Plugin.zip'entpacken
-3. Im HDFS unter 'user/cloudera/' die Ordnerstruktur 'Flume/UFO' (sollte am Ende also folgendermaßen aussehen: 'user/cloudera/Flume/UFO'). In den Ordner 'UFO' wird später der Output des Flume-Agents geschrieben.
+3. Im HDFS unter 'user/cloudera/' die Ordnerstruktur 'Flume/UFO' anlegen (sollte am Ende folgendermaßen aussehen: 'user/cloudera/Flume/UFO'). In den Ordner 'UFO' wird später der Output des Flume-Agents geschrieben.
 4. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
 
 ## Oozie-Workflows
