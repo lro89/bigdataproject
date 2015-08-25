@@ -9,8 +9,6 @@
   2.1. Workflows: Enthält die Oozie-Workflows samt benötigter Lib-Dateien <br>
   2.2. Datasources: Enthält die Rohdaten für die Pipeline <br>
   2.3. Scripts: Enthält alle benötigten Skripte (Python, Pig...) <br>
-  2.4. UFO: TODO <br>
-  2.5. UFO_PROJEKT todo
 
 
 ## Datenherkunft
@@ -36,24 +34,14 @@
 4. Auf der Cloudera-VM (nicht im HDFS) ist der Order workflows ebenfalls abzulegen. Von dort aus werden anhand der job.properties-Dateien die Workflows gestartet. <br>
 5. Bekanntmachung von Oozie in der Console: <code>$ export OOZIE_URL=http://vm-cluster-node1:11000/oozie</code>
 
-### Ausführungsreihenfolge
-#### Manuell
-1. ExtractUFOData
-2. ExtractWeatherTables
-3. LoadStaticData
-4. FillFrontendTables
-
-#### Vollständig automatisiert
-1. Workflows (!!! ACHTUNG !!! - auf der Quickstart-VM ist zwischendurch immer wieder der Status des HBase-Masters und des HBase-Regionservers zu prüfen. Laufen diese nicht, bricht der Workflow ab)
+### Ausführung
+#### Vollständig automatisierte Ausführung
+1. **Workflow** (!!! ACHTUNG !!! - auf der Quickstart-VM ist zwischendurch immer wieder der Status des HBase-Masters und des HBase-Regionservers zu prüfen. Laufen diese nicht, bricht der Workflow ab)
 
 ### Kommandos
 **Start**: <code>oozie job -run -oozie http://quickstart.cloudera:11000/oozie/ -config workflows/**WORKFLOW**/job.properties</code> <br>
 **Kontolle**: <code>oozie job -oozie http://quickstart.cloudera:11000/oozie/ -info 0000001-150816094600884-oozie-oozi-W</code> <br>
 **Logs:** <code>oozie job -oozie http://quickstart.cloudera:11000/oozie/ -log 0000001-150816094600884-oozie-oozi-W</code> <br>
-
-## MapReduce - manueller Start
-1. Maven muss auf der VM installiert sein!
-2. <code>hadoop jar ufo-map-reduce-1.0-SNAPSHOT-mrjob.jar ufojoin /user/cloudera/Staging/UFO /user/cloudera/Datasources/Meta/CountiesCitiesCode ufooutput</code>
 
 ## Frontend
 Eclipse Maven Project: UFO_PROJECT<br>
@@ -62,14 +50,22 @@ Umsetzung mit: Spring Boot + Spring MVC + Thymeleaf
 Projekt Bild-Path: Java 7 auswählen<br>
 Projekt-Properties: Java Compile Level: Java 7<br>
 Auf der Console in das UFO_PROJECT wechseln, anschließend folgendes ausführen:<br>
-mvn install<br>
-Server starten: java -jar target/ufoproject-0.0.1-SNAPSHOT.jar<br>
+<code>mvn install</code> oder <code>mvn clean package</code><br>
+Server starten: <code>java -jar target/ufoproject-0.0.1-SNAPSHOT.jar</code><br>
 
-## Aufgetrene Probleme
-- Oozie-Konfiguration (Herausfinden der richtigen Libs, mapreduce.input.format.type vs mapreduce.inputformat.type
-- Proxy-Einstellungen für Flume?
 
-#### Oozie Workflow kann Action 'HiveSkript' nicht ausführen
+## Bei auftretenden Problemen
+### Manuelle Ausführung der Einzelschritte in Oozie (**nach vollständig automatisierter Ausführung nicht mehr notwendig!**)
+1. ExtractUFOData
+2. ExtractWeatherTables
+3. LoadStaticData
+4. FillFrontendTables
+
+### MapReduce - manueller Start (**nach vollständig automatisierter Ausführung nicht mehr notwendig!**)
+1. Maven muss auf der VM installiert sein!
+2. <code>hadoop jar ufo-map-reduce-1.0-SNAPSHOT-mrjob.jar ufojoin /user/cloudera/Staging/UFO /user/cloudera/Datasources/Meta/CountiesCitiesCode ufooutput</code>
+
+### Oozie Workflow kann Action 'HiveSkript' nicht ausführen
 Fehler: 
 ```
 Failing Oozie Launcher, Main class [org.apache.oozie.action.hadoop.HiveMain], main() threw exception, hive-site.xml (Permission denied)     

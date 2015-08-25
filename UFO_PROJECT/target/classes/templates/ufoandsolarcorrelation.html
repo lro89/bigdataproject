@@ -16,10 +16,10 @@
 				var data = new google.visualization.DataTable();
 				data.addColumn('string', 'monthYear');
 				data.addColumn('number', 'Anzahl UFO-Sichtungen');
-				data.addColumn('number', 'Sonnenkraft (in Std.)');
+				data.addColumn('number', 'Sonnenkraft');
 				
 				//Daten als array parsen
-				var obj = /*[[${ufoTempCorrData}]]*/;
+				var obj = /*[[${ufoSolarCorrData}]]*/;
 				var result = JSON.parse("[" + obj + "]");
 				data.addRows(result);
 				
@@ -32,7 +32,7 @@
 				var options = {
 					title : ' ',
 					vAxis : {
-						title : 'Anzahl der UFO-Sichtungen'
+						title : ' '
 					},
 					hAxis : {
 						title : 'Zeit'
@@ -73,7 +73,7 @@
 						<tr>
 							<th class="col-md-1">Jahr und Monat</th>
 							<th class="col-md-1">Anzahl UFO-Sichtungen</th>
-							<th class="col-md-2">&empty; Sonnenkraft (in Std.)</th>
+							<th class="col-md-2">&empty; Sonnenkraft</th>
 						</tr>
 					</thead>
 					<tbody>
