@@ -24,8 +24,9 @@
 </code> einkommentieren. Template aus dem Namen entfernen
 2. Als cloudera auf der NameNode (nicht HDFS) im Verzeichnis /home/cloudera/workspace/bigdataproject/UFO_FlumeAgent/ das ZIP 'Flume_Plugin.zip'entpacken
 3. Im HDFS unter 'user/cloudera/' die Ordnerstruktur 'Flume/UFO' anlegen (sollte am Ende folgendermaßen aussehen: 'user/cloudera/Flume/UFO'). In den Ordner 'UFO' wird später der Output des Flume-Agents geschrieben.
-4. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
-5. Die Ausführung des Agents kann einige Minuten in Anspruch nehmen. Sobald die Meldung "Writer callback called" erscheint, kann der Agent mit Strg+C beendet werden. In dem HDFS-Ordner 'UFO' befindet sich anschließend eine Datei namens "UFO.{codestempel}" (Größe ca. 1.6 MB) mit den extrahierten UFO-Daten (vorausgesetzt der Agent lief ohne Fehler).
+4. Falls die Internetverbindung der VM über ein Proxy erfolgt, müssen die entsprechenden Informationen in der Konfig-Datei 'UFO-flume_WEBAGENT.properties' gepflegt werden.
+5. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
+6. Die Ausführung des Agents kann einige Minuten in Anspruch nehmen. Sobald die Meldung "Writer callback called" erscheint, kann der Agent mit Strg+C beendet werden. In dem HDFS-Ordner 'UFO' befindet sich anschließend eine Datei namens "UFO.{codestempel}" (Größe ca. 1.6 MB) mit den extrahierten UFO-Daten (vorausgesetzt der Agent lief ohne Fehler).
 
 ## Oozie-Workflows
 ### Allgemeines
