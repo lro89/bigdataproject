@@ -56,6 +56,7 @@ Umsetzung mit: Spring Boot + Spring MVC + Thymeleaf
 ####Einstellungen zum Starten des Projektes:
 Projekt Bild-Path: Java 7 auswählen<br>
 Projekt-Properties: Java Compile Level: Java 7<br>
+Ggf. in der <code>src/main/resources/hbase.properties</code> den Hostnamen der Cloudera-VM anpassen oder auf eine IP-Adresse fixieren <br>
 Auf der Console in das UFO_PROJECT wechseln, anschließend folgendes ausführen:<br>
 <code>mvn install</code> oder <code>mvn clean package</code><br>
 Server starten: <code>java -jar target/ufoproject-0.0.1-SNAPSHOT.jar</code><br>
