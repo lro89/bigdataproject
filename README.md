@@ -31,6 +31,9 @@
 5. Als cloudera den Befehl in der <code>start flume agent.sh</code> anpassen, rauskopieren und absenden
 6. Die Ausführung des Agents kann einige Minuten in Anspruch nehmen. Sobald die Meldung "Writer callback called" erscheint, kann der Agent mit Strg+C beendet werden. In dem HDFS-Ordner 'UFO' befindet sich anschließend eine Datei namens "UFO.{codestempel}" (Größe ca. 1.6 MB) mit den extrahierten UFO-Daten (vorausgesetzt der Agent lief ohne Fehler).
 
+**Hinweis zum Flume-Projekt**<br>
+Beim Importieren des Java-Projektes "UFO_FlumeAgent" in Eclipse muss die externe jar-Datei "jsoup" nachträglich manuell hinzugefügt werden. Diese befindet sich in dem bereits in Schritt 2 erwähnten zip-Archiv. Dieses muss nicht gemacht werden um den Flume Agent auszuführen, sondern nur wenn man sich das Projekt in Eclipse anschauen möchte.
+
 ## Oozie-Workflows
 ### Allgemeines
 1. Die unter *ZIP-Dateien* abgelegten Archive sind in das HDFS-Verzeichnis /home/cloudera/ zu importieren. Die ZIP-Ordner enthalten auch alle JARs, die für die Ausführung des Workflows benötigt werden (inkl. der HBase-JARs!, jeweils im Unterorder *libs*)
